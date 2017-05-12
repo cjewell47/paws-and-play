@@ -4,8 +4,8 @@ const env    = require('../config/env');
 
 function authenticationsRegister(req, res) {
   User
-    .create(req.body.user, (err, user) => {
-      if (err) return res.status(500).json({ message: 'Something went wrong.' });
+    .create(req.body, (err, user) => {
+      if (err) return res.status(500).json({ message: err});
 
       const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });
 

@@ -10,7 +10,7 @@ const app          = express();
 const dest         = `${__dirname}/public`;
 const env          = require('./config/env');
 const router       = require('./config/routes');
-const errorHandler = require('./lib/errors');
+//const errorHandler = require('./lib/errors');
 
 
 mongoose.connect(env.db[process.env.NODE_ENV]);
@@ -38,8 +38,8 @@ function jwtErrorHandler(err, req, res, next){
 
 app.use('/api', router);
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
-app.use(errorHandler);
+//app.use(errorHandler);
 
 app.listen(port, () => console.log(`Express has started on port: ${port}`));
 
-module.exports = app;
+//module.exports = app;

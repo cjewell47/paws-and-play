@@ -29,7 +29,7 @@ userSchema.methods.validatePassword = validatePassword;
 userSchema.set('toJSON', {
   transform: function(doc, ret) {
     delete ret.passwordHash;
-    delete ret.email;
+    // delete ret.email;
     delete ret.__v;
     return ret;
   }
@@ -37,7 +37,7 @@ userSchema.set('toJSON', {
 
 module.exports = mongoose.model('User', userSchema);
 
-function setPassword(value){
+function setPassword(value) {
   this._password    = value;
   this.passwordHash = bcrypt.hashSync(value, bcrypt.genSaltSync(8));
 }
@@ -68,6 +68,6 @@ function validateEmail(email) {
   }
 }
 
-function validatePassword(password){
+function validatePassword(password) {
   return bcrypt.compareSync(password, this.passwordHash);
 }
