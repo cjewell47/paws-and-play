@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">94.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/18</span>
+        <span class='fraction'>17/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>7/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/16</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -89,13 +89,13 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,16 +104,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,14 +129,14 @@
 const jwt    = require('jsonwebtoken');
 const env    = require('../config/env');
 &nbsp;
-<span class="fstat-no" title="function not covered" >function authenticationsRegister(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  User</span>
+function authenticationsRegister(req, res) {
+  User
     .create(req.body, (err, user) =&gt; {
-<span class="cstat-no" title="statement not covered" >      if (err) <span class="cstat-no" title="statement not covered" >return res.status(500).json({ message: err});</span></span>
+      if (err) return res.status(500).json({ message: err});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });</span>
+      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return res.status(201).json({</span>
+      return res.status(201).json({
         message: `Welcome ${user.username}!`,
         user,
         token
@@ -144,17 +144,17 @@ const env    = require('../config/env');
     });
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function authenticationsLogin(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  User</span>
+function authenticationsLogin(req, res) {
+  User
     .findOne({ email: req.body.email }, (err, user) =&gt; {
-<span class="cstat-no" title="statement not covered" >      if (err) <span class="cstat-no" title="statement not covered" >return res.status(500).json({ message: 'Something went wrong.' });</span></span>
-<span class="cstat-no" title="statement not covered" >      if (!user || !user.validatePassword(req.body.password)) {</span>
-<span class="cstat-no" title="statement not covered" >        return res.status(401).json({ message: 'Unauthorized.' });</span>
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (err) <span class="cstat-no" title="statement not covered" >return res.status(500).json({ message: 'Something went wrong.' });</span>
+      if (!user || !user.validatePassword(req.body.password)) {
+        return res.status(401).json({ message: 'Unauthorized.' });
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });</span>
+      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return res.status(200).json({</span>
+      return res.status(200).json({
         message: `Welcome back ${user.username}!`,
         user,
         token
@@ -172,7 +172,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:24:34 GMT+0100 (BST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 18:19:35 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
