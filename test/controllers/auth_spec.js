@@ -11,6 +11,18 @@ describe('Authentication Controller Test', () => {
         .catch(done);
     });
 
+    beforeEach(done => {
+      User
+        .create({
+          username: 'kanye',
+          email: 'kanye@kanye.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .then(() => done())
+        .catch(done);
+    });
+
     afterEach(done => {
       User
         .remove()
@@ -168,6 +180,42 @@ describe('Authentication Controller Test', () => {
           console.log();
           expect(res.body.message.name)
             .to.eq('ValidationError');
+          done();
+        });
+    });
+    it('should return a 500 response if username is not unique', function(done) {
+    // this.skip();
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          username: 'kanye',
+          email: 'drake@dreke.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.status)
+            .to.eq(500);
+          done();
+        });
+    });
+    it('should return a 500 response if email is not unique', function(done) {
+    // this.skip();
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          username: 'drake',
+          email: 'kanye@kanye.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.status)
+            .to.eq(500);
           done();
         });
     });
