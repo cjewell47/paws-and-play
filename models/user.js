@@ -2,11 +2,21 @@ const mongoose  = require('mongoose');
 const bcrypt    = require('bcrypt');
 const validator = require('validator');
 
+const dogSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  breed: { type: String, required: true },
+  image: { type: String, required: true },
+  size: {type: String}
+},{
+  timestamps: true
+});
+
+
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
-  passwordHash: { type: String, required: true }
-  // dogs: [{type: mongoose.Schema.ObjectId, ref: 'Dog'}]
+  passwordHash: { type: String, required: true },
+  dogs: [dogSchema]
 });
 
 userSchema

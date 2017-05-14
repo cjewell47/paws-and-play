@@ -22,13 +22,13 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api', expressJWT({ secret: env.secret })
-  .unless({
-    path: [
-      { url: '/api/register', methods: ['POST'] },
-      { url: '/api/login',    methods: ['POST'] }
-    ]
-  }));
+// app.use('/api', expressJWT({ secret: env.secret })
+//   .unless({
+//     path: [
+//       { url: '/api/register', methods: ['POST'] },
+//       { url: '/api/login',    methods: ['POST'] }
+//     ]
+//   }));
 app.use(jwtErrorHandler);
 
 function jwtErrorHandler(err, req, res, next){
