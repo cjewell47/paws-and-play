@@ -1,1 +1,27 @@
 // Import all of your scss files here
+// Import all of your scss files here
+img {
+  width: 400px;
+  height: 300px;
+}
+.FormPage{
+text-align: center;
+}
+.showName {
+  font-size: 50px;
+}
+.showBreed, .showSize {
+  font-size: 30px;
+}
+h4{
+  a {
+    background-color: rgba(0,0,255,0.4);
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    text-decoration: none !important;
+  }
+  a:hover {
+    color: rgba(255, 0, 0, 1);
+  }
+}

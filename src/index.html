@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dog Walking App</title>
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body>
-  </body>
+<html ng-app="DogApp">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title>Angular Stack Setup</title>
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="main.isNavCollapsed = !main.isNavCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="dogsIndex">Dog Walk</a>
+      </div>
+      <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ui-sref="dogsIndex">Home</a></li>
+          <li><a ui-sref="dogsNew">Add a dog</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main ui-view> </main>
+</body>
 </html>

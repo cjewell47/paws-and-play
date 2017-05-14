@@ -1,0 +1,13 @@
+<div class="FormPage">
+
+
+  <h2 class="showName">{{ dogs.dog.name }}</h2>
+  <p class="showBreed"><strong>Breed:</strong> {{ dogs.dog.breed }}</p>
+  <p class="showSize"><strong>Size:</strong> {{ dogs.dog.size }}</p>
+  <img ng-src="{{ dogs.dog.image}}">
+  <br>
+  <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Back</button>
+  <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dogs.dog._id})">Edit</button>
+
+  <button type="button" class="btn btn-danger" ng-click="dogs.delete(dog)">Delete</button>
+</div>
