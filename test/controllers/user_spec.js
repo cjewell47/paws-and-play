@@ -22,8 +22,8 @@ describe('User Controller Test', () => {
       })
       .then(user => {
         gUser = user;
+        done();
       })
-
       .catch(done);
   });
 
@@ -44,8 +44,10 @@ describe('User Controller Test', () => {
           email: gUser.email,
           password: 'password'
         })
-        .end((err, res) => {
-          myToken = res.body.user.token;
+        .then(res => {
+          console.log(res.body);
+          myToken = res.body.token;
+          done();
         })
         .catch(done);
     });
@@ -53,7 +55,7 @@ describe('User Controller Test', () => {
     it('should return a 200 response', function(done) {
     // this.skip();
       api
-        .post('/api/users')
+        .get('/api/users')
         .set('Accept', 'application/json')
         .set('Authorization', 'Bearer '+myToken)
         .send({
@@ -64,6 +66,23 @@ describe('User Controller Test', () => {
           if (err) console.log(err);
           expect(res.status)
             .to.eq(200);
+          done();
+        });
+    });
+    it('should return a 200 response', function(done) {
+    // this.skip();
+      api
+        .get('/api/users')
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.header['content-type'])
+            .to.be.eq('application/json; charset=utf-8');
           done();
         });
     });
