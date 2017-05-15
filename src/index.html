@@ -22,12 +22,7 @@
         </button>
         <a class="navbar-brand" ui-sref="home">Dog Walk</a>
       </div>
-      <!-- <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref="dogsIndex">Home</a></li>
-          <li><a ui-sref="dogsNew">Add a dog</a></li>
-        </ul>
-      </div> -->
+
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" uib-collapse="main.isNavCollapsed">
           <ul class="nav navbar-nav navbar-right">
             <li ng-show="main.user">
@@ -39,15 +34,17 @@
             <li ng-hide="main.user">
               <a ui-sref="login">Sign In</a>
             </li>
-            <li ng-show="main.user">
-              <a ui-sref="usersIndex">Users</a>
-            </li>
+
             <li ng-show="main.user">
               <a ui-sref="dogsNew">Add a dog</a>
             </li>
             <li ng-show="main.user">
+              <a ui-sref="usersShow({ id: main.user._id })">Profile</a>
+            </li>
+            <li ng-show="main.user">
               <a ng-click="main.logout()">Logout</a>
             </li>
+
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>

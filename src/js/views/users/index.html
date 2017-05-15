@@ -1,12 +1,5 @@
-<h1>Users</h1>
-<div class="media" ng-repeat="user in usersIndex.users">
-  <div class="media-left">
-    <a ui-sref="#">
-      <img class="media-object" ng-src="{{ user.image }}">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">{{ user.username }}</h4>
-    <p>{{ user.email }}</p>
-  </div>
-</div>
+<ul>
+  <li ng-repeat="user in usersIndex.users">
+    <a ui-sref="usersShow({ id: user._id })">{{ user.username }}</a>
+  </li>
+</ul>
