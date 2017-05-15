@@ -15,7 +15,7 @@ function LoginCtrl(User, CurrentUserService, $state) {
       .then(data => {
         console.log(data);
         CurrentUserService.getUser();
-        $state.go('usersIndex');
+        $state.go('dogsIndex');
       })
       .catch(err => {
         console.log(err);
