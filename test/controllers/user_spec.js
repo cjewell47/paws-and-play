@@ -242,6 +242,18 @@ describe('User Controller Test', () => {
   describe('PUT /api/users/:id', () => {
 
     beforeEach(done => {
+      User
+        .create({
+          username: 'chance',
+          email: 'chance@chance.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .then(() => done())
+        .catch(done);
+    });
+
+    beforeEach(done => {
       api
       .post('/api/login')
       .set('Accept', 'application/json')
@@ -333,6 +345,64 @@ describe('User Controller Test', () => {
         expect(res.body.user)
         .to.have.property('email')
         .that.deep.equals(gUser.email);
+        done();
+      });
+    });
+    it('should return an error if an invalid ID is passed in', function(done) {
+      // this.skip();
+      api
+      .put(`/api/users/53cb6b9b4f4ddef1ad47f943`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        user: {
+          username: 'Billy'
+        }
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+          .to.eq(404);
+        done();
+      });
+    });
+    it('should return a 500 error and "Something went wrong" message if the username is invalid', function(done) {
+      // this.skip();
+      api
+      .put(`/api/users/${gUser._id}`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        user: {
+          username: ''
+        }
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+          .to.eq(500);
+        expect(res.body.message)
+          .to.eq('Something went wrong.');
+        done();
+      });
+    });
+    it('should return a 500 error and "Something went wrong" message if the username or email is not unique', function(done) {
+      // this.skip();
+      api
+      .put(`/api/users/${gUser._id}`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        user: {
+          email: 'chance@chance.com'
+        }
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+          .to.eq(500);
+        expect(res.body.message)
+          .to.eq('Something went wrong.');
         done();
       });
     });
