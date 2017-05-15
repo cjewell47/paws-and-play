@@ -1,4 +1,3 @@
-
 angular
   .module('DogApp')
   .config(Router);
@@ -33,6 +32,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise('/');
 }
+
 
 
 
