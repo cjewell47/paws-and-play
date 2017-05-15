@@ -46,11 +46,15 @@ User
   ])
   .then(users => {
     console.log(`${users.length} users were saved.`);
+    // const userIds = [];
+    // users.forEach(user => {
+    //   userIds.push(user._id);
+    // });
 
-    Dog
+    return Dog
       .create([
         {
-          owner: users[0].id,
+          owner: users[0]._id,
           name: 'nero',
           breed: 'labrador',
           image: 'https://vetstreet.brightspotcdn.com/dims4/default/03f7acf/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F36%2F4fccb0a10611e087a80050568d634f%2Ffile%2FLabrador-4-645mk062111.jpg',
@@ -59,7 +63,7 @@ User
       ])
       .then(dogs => {
         console.log(`${dogs.length} users were saved.`);
-        
+
       });
 
   })
