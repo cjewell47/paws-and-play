@@ -190,8 +190,9 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
+          console.log(res);
           if (err) console.log(err);
-          expect(res.body.user)
+          expect(res.body)
           .to.include.keys([
             'username',
             'email',
@@ -212,16 +213,33 @@ describe('User Controller Test', () => {
         })
         .end((err, res) => {
           if (err) console.log(err);
-          expect(res.body.user)
+          expect(res.body)
             .to.have.property('username')
             .that.deep.equals(gUser.username);
-          expect(res.body.user)
+          expect(res.body)
             .to.have.property('email')
             .that.deep.equals(gUser.email);
           done();
         });
     });
-    
+    it('should not return an object when an invalid id is passed in', function(done) {
+    // this.skip();
+      api
+        .get(`/api/users/53cb6b9b4f4ddef1ad47f943`)
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.status)
+            .to.eq(404);
+          done();
+        });
+    });
+
   });
 
 });
