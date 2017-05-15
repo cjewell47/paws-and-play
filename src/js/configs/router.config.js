@@ -35,8 +35,14 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'UsersShowCtrl',
     controllerAs: 'usersShow'
   })
+  .state('usersEdit', {
+    url: '/users/:id/edit',
+    templateUrl: '/js/views/users/edit.html',
+    controller: 'UsersEditCtrl',
+    controllerAs: 'vm'
+  })
   .state('dogsIndex', {
-    url: '/',
+    url: '/dogs/',
     templateUrl: '/js/views/dogs/home.html',
     controller: 'DogIndexCtrl',
     controllerAs: 'dogs'
