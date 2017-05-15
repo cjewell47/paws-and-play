@@ -119,7 +119,6 @@ describe('User Controller Test', () => {
             .and.to.include.keys([
               'username',
               'email',
-              'dogs',
               '_id'
             ]);
           done();
@@ -194,8 +193,7 @@ describe('User Controller Test', () => {
           .to.include.keys([
             'username',
             'email',
-            '_id',
-            'dogs'
+            '_id'
           ]);
           done();
         });
@@ -311,8 +309,7 @@ describe('User Controller Test', () => {
           .to.include.keys([
             'username',
             'email',
-            '_id',
-            'dogs'
+            '_id'
           ]);
           done();
         });
