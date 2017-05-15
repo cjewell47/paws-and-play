@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-      <div ng-repeat="dog in dogs.dogs" index="$index">
+      <div ng-repeat="dog in vm.dogs" index="$index">
         <img ng-src="{{dog.image}}">
           <h4><a ui-sref="dogsShow({ id: dog._id })">{{ dog.name }}</a></h4>
         </div>
