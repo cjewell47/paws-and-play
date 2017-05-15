@@ -1,37 +1,77 @@
 angular
-.module('DogApp')
-.config(Router);
+  .module('DogApp')
+  .config(Router);
 
-Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-function Router($stateProvider, $urlRouterProvider, $locationProvider ) {
+Router.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+function Router($stateProvider, $locationProvider, $urlRouterProvider){
   $locationProvider.html5Mode(true);
+
   $stateProvider
-  .state('dogsIndex', {
+  .state('home', {
     url: '/',
-    templateUrl: '/js/views/dogs/home.html',
-    controller: 'DogIndexCtrl',
-    controllerAs: 'dogs'
+    templateUrl: '/js/views/home.html'
   })
-  .state('dogsNew', {
-    url: '/dogs/new',
-    templateUrl: '/js/views/dogs/new.html',
-    controller: 'DogNewCtrl',
-    controllerAs: 'dogs'
+  .state('register', {
+    url: '/register',
+    templateUrl: '/js/views/register.html',
+    controller: 'RegisterCtrl',
+    controllerAs: 'register'
   })
-  .state('dogsEdit', {
-    url: '/dogs/:id/edit',
-    templateUrl: '/js/views/dogs/edit.html',
-    controller: 'DogsEditCtrl',
-    controllerAs: 'dogs'
+  .state('login', {
+    url: '/login',
+    templateUrl: '/js/views/login.html',
+    controller: 'LoginCtrl',
+    controllerAs: 'login'
   })
-  .state('dogsShow', {
-    url: '/dogs/:id',
-    templateUrl: '/js/views/dogs/show.html',
-    controller: 'DogShowCtrl',
-    controllerAs: 'dogs'
+  .state('usersIndex', {
+    url: '/users',
+    templateUrl: '/js/views/users/index.html',
+    controller: 'UsersIndexCtrl',
+    controllerAs: 'usersIndex'
   });
-
-
 
   $urlRouterProvider.otherwise('/');
 }
+
+
+
+
+
+
+// angular
+// .module('DogApp')
+// .config(Router);
+//
+// Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+// function Router($stateProvider, $urlRouterProvider, $locationProvider ) {
+//   $locationProvider.html5Mode(true);
+//   $stateProvider
+//   .state('dogsIndex', {
+//     url: '/',
+//     templateUrl: '/js/views/dogs/home.html',
+//     controller: 'DogIndexCtrl',
+//     controllerAs: 'dogs'
+//   })
+//   .state('dogsNew', {
+//     url: '/dogs/new',
+//     templateUrl: '/js/views/dogs/new.html',
+//     controller: 'DogNewCtrl',
+//     controllerAs: 'dogs'
+//   })
+//   .state('dogsEdit', {
+//     url: '/dogs/:id/edit',
+//     templateUrl: '/js/views/dogs/edit.html',
+//     controller: 'DogsEditCtrl',
+//     controllerAs: 'dogs'
+//   })
+//   .state('dogsShow', {
+//     url: '/dogs/:id',
+//     templateUrl: '/js/views/dogs/show.html',
+//     controller: 'DogShowCtrl',
+//     controllerAs: 'dogs'
+//   });
+//
+//
+//
+//   $urlRouterProvider.otherwise('/');
+// }
