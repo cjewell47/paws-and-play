@@ -348,7 +348,7 @@ describe('User Controller Test', () => {
         done();
       });
     });
-    it('should return an error if an invalid ID is passed in', function(done) {
+    it('should return a 404 error and "User not found" if an invalid ID is passed in', function(done) {
       // this.skip();
       api
       .put(`/api/users/53cb6b9b4f4ddef1ad47f943`)
@@ -363,6 +363,8 @@ describe('User Controller Test', () => {
         if (err) console.log(err);
         expect(res.status)
           .to.eq(404);
+        expect(res.body.message)
+          .to.eq('User not found.');
         done();
       });
     });
@@ -406,6 +408,81 @@ describe('User Controller Test', () => {
         done();
       });
     });
+
+  });
+
+  describe('DELETE /api/users/:id', () => {
+
+    beforeEach(done => {
+      api
+      .post('/api/login')
+      .set('Accept', 'application/json')
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .then(res => {
+        myToken = res.body.token;
+        done();
+      })
+      .catch(done);
+    });
+
+    it('should return a 200 response', function(done) {
+      // this.skip();
+      api
+      .delete(`/api/users/${gUser._id}`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+          .to.eq(204);
+        done();
+      });
+    });
+    it('should return an empty object', function(done) {
+      // this.skip();
+      api
+      .delete(`/api/users/${gUser._id}`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.body)
+          .to.be.an.empty('object');
+        done();
+      });
+    });
+    it('should return a 404 error and "User not found" if given an invalid id', function(done) {
+      // this.skip();
+      api
+      .delete(`/api/users/53cb6b9b4f4ddef1ad47f943`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+          .to.eq(404);
+        expect(res.body.message)
+          .to.eq('User not found.');
+        done();
+      });
+    });
+    
+
 
   });
 
