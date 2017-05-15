@@ -98,9 +98,26 @@ describe('User Controller Test', () => {
         .end((err, res) => {
           if (err) console.log(err);
           expect(res.body)
-            .to.have.key('users');
-          expect(res.body.users)
             .to.be.an('array');
+          done();
+        });
+    });
+    it('should return an array featuring a user at the first index', function(done) {
+    // this.skip();
+      api
+        .get('/api/users')
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          console.log(res);
+          if (err) console.log(err);
+          expect(res.body)
+            .to.have.an('object')
+            .at.property(0);
           done();
         });
     });
@@ -120,7 +137,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
@@ -214,7 +230,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
-          console.log(res);
           if (err) console.log(err);
           expect(res.status)
             .to.eq(404);
