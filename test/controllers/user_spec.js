@@ -204,6 +204,26 @@ describe('User Controller Test', () => {
           done();
         });
     });
+    it('should not return a user if the ID is wrong', function(done) {
+    // this.skip();
+      api
+        .get('/api/users/53cb6b9b4f4ddef1ad47f943')
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          console.log(res);
+          if (err) console.log(err);
+          expect(res.status)
+            .to.eq(404);
+          expect(res.body.message)
+            .to.eq('User not found.');
+          done();
+        });
+    });
 
 
 
