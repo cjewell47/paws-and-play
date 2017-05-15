@@ -45,7 +45,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
