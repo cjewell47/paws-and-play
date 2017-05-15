@@ -219,6 +219,62 @@ describe('Authentication Controller Test', () => {
           done();
         });
     });
+    it('should return a validation error and a 500 response if the password is less than 6 characters', function(done) {
+    // this.skip();
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          username: 'drake',
+          email: 'drake@drake.com',
+          password: 'pa',
+          passwordConfirmation: 'pa'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body.message.name)
+            .to.eq('ValidationError');
+          expect(res.status)
+            .to.eq(500);
+          done();
+        });
+    });
+    it('should return a field called dogs', function(done) {
+    // this.skip();
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          username: 'drake',
+          email: 'drake@drake.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body.user)
+            .to.have.property('dogs');
+          done();
+        });
+    });
+    it('should return a field called dogs that is an array', function(done) {
+    // this.skip();
+      api
+        .post('/api/register')
+        .set('Accept', 'application/json')
+        .send({
+          username: 'drake',
+          email: 'drake@drake.com',
+          password: 'password',
+          passwordConfirmation: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body.user.dogs)
+            .to.be.an('array');
+          done();
+        });
+    });
 
   });
 
@@ -387,6 +443,38 @@ describe('Authentication Controller Test', () => {
             .to.eq(401);
           expect(res.body.message)
             .to.eq('Unauthorized.');
+          done();
+        });
+    });
+    it('should return a field called dogs', function(done) {
+    // this.skip();
+      api
+        .post('/api/login')
+        .set('Accept', 'application/json')
+        .send({
+          email: 'drake@drake.com',
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body.user)
+            .to.have.property('dogs');
+          done();
+        });
+    });
+    it('should return a field called dogs that is an array', function(done) {
+    // this.skip();
+      api
+        .post('/api/login')
+        .set('Accept', 'application/json')
+        .send({
+          email: 'drake@drake.com',
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body.user.dogs)
+            .to.be.an('array');
           done();
         });
     });
