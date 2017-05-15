@@ -8,7 +8,8 @@ describe('GET /*', () => {
       .set('Accept', 'application/html')
       .end((err, res) => {
         if (err) console.log(err);
-        expect(res.status).to.eq(200);
+        expect(res.status)
+        .to.eq(200);
         done();
       });
   });
