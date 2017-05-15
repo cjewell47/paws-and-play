@@ -45,7 +45,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
@@ -99,15 +98,33 @@ describe('User Controller Test', () => {
         .end((err, res) => {
           if (err) console.log(err);
           expect(res.body)
-            .to.have.key('users');
-          expect(res.body.users)
             .to.be.an('array');
           done();
         });
     });
-
-
-
+    it('should return an array with a user object', function(done) {
+    // this.skip();
+      api
+        .get('/api/users')
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body)
+            .to.have.property(0)
+            .and.to.include.keys([
+              'username',
+              'email',
+              'dogs',
+              '_id'
+            ]);
+          done();
+        });
+    });
   });
 
   describe('GET /api/users/:id', () => {
@@ -121,7 +138,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
@@ -139,6 +155,7 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
+          console.log(res);
           if (err) console.log(err);
           expect(res.status)
             .to.eq(200);
@@ -173,8 +190,9 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
+          console.log(res);
           if (err) console.log(err);
-          expect(res.body.user)
+          expect(res.body)
           .to.include.keys([
             'username',
             'email',
@@ -195,19 +213,19 @@ describe('User Controller Test', () => {
         })
         .end((err, res) => {
           if (err) console.log(err);
-          expect(res.body.user)
+          expect(res.body)
             .to.have.property('username')
             .that.deep.equals(gUser.username);
-          expect(res.body.user)
+          expect(res.body)
             .to.have.property('email')
             .that.deep.equals(gUser.email);
           done();
         });
     });
-    it('should not return a user if the ID is wrong', function(done) {
+    it('should not return an object when an invalid id is passed in', function(done) {
     // this.skip();
       api
-        .get('/api/users/53cb6b9b4f4ddef1ad47f943')
+        .get(`/api/users/53cb6b9b4f4ddef1ad47f943`)
         .set('Accept', 'application/json')
         .set('Authorization', 'Bearer '+myToken)
         .send({
@@ -215,17 +233,12 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
-          console.log(res);
           if (err) console.log(err);
           expect(res.status)
             .to.eq(404);
-          expect(res.body.message)
-            .to.eq('User not found.');
           done();
         });
     });
-
-
 
   });
 
