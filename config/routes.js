@@ -3,7 +3,7 @@ const router   = express.Router();
 
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
-const dogs           = require('../controllers/dogs');
+const dogs            = require('../controllers/dogs');
 
 
 router.route('/register')

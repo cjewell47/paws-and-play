@@ -1,5 +1,5 @@
 TN:
-SF:/Users/niox/development/wdi-group-project/index.js
+SF:/Users/charlesjewell/development/wdi-group-project/index.js
 FN:34,jwtErrorHandler
 FNF:1
 FNH:0
@@ -43,7 +43,7 @@ BRF:6
 BRH:3
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/config/env.js
+SF:/Users/charlesjewell/development/wdi-group-project/config/env.js
 FNF:0
 FNH:0
 DA:1,1
@@ -55,7 +55,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/config/routes.js
+SF:/Users/charlesjewell/development/wdi-group-project/config/routes.js
 FNF:0
 FNH:0
 DA:1,1
@@ -76,7 +76,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/controllers/authentications.js
+SF:/Users/charlesjewell/development/wdi-group-project/controllers/authentications.js
 FN:5,authenticationsRegister
 FN:20,authenticationsLogin
 FNF:2
@@ -113,7 +113,7 @@ BRF:8
 BRH:7
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/models/user.js
+SF:/Users/charlesjewell/development/wdi-group-project/models/user.js
 FN:31,(anonymous_1)
 FN:41,setPassword
 FN:46,setPasswordConfirmation
@@ -176,7 +176,7 @@ BRF:10
 BRH:6
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/controllers/users.js
+SF:/Users/charlesjewell/development/wdi-group-project/controllers/users.js
 FN:3,usersIndex
 FN:11,usersShow
 FN:20,usersUpdate
@@ -228,7 +228,7 @@ BRF:14
 BRH:0
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/controllers/dogs.js
+SF:/Users/charlesjewell/development/wdi-group-project/controllers/dogs.js
 FN:3,indexRoute
 FN:10,createRoute
 FN:17,showRoute
@@ -277,7 +277,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:/Users/niox/development/wdi-group-project/models/dog.js
+SF:/Users/charlesjewell/development/wdi-group-project/models/dog.js
 FNF:0
 FNH:0
 DA:1,1
