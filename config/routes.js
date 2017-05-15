@@ -5,7 +5,6 @@ const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 const dogs            = require('../controllers/dogs');
 
-
 router.route('/register')
 .post(authentications.register);
 router.route('/login')
@@ -19,7 +18,8 @@ router.route('/users/:id')
 .delete(users.delete);
 
 router.route('/dogs')
-.get(dogs.index);
+.get(dogs.index)
+.post(dogs.create);
 router.route('/dogs/:id')
 .get(dogs.show)
 .put(dogs.update)

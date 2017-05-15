@@ -28,6 +28,36 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/users/index.html',
     controller: 'UsersIndexCtrl',
     controllerAs: 'usersIndex'
+  })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl',
+    controllerAs: 'usersShow'
+  })
+  .state('dogsIndex', {
+    url: '/',
+    templateUrl: '/js/views/dogs/home.html',
+    controller: 'DogIndexCtrl',
+    controllerAs: 'dogs'
+  })
+  .state('dogsNew', {
+    url: '/dogs/new',
+    templateUrl: '/js/views/dogs/new.html',
+    controller: 'DogNewCtrl',
+    controllerAs: 'dogs'
+  })
+  .state('dogsEdit', {
+    url: '/dogs/:id/edit',
+    templateUrl: '/js/views/dogs/edit.html',
+    controller: 'DogsEditCtrl',
+    controllerAs: 'dogs'
+  })
+  .state('dogsShow', {
+    url: '/dogs/:id',
+    templateUrl: '/js/views/dogs/show.html',
+    controller: 'DogShowCtrl',
+    controllerAs: 'dogs'
   });
 
   $urlRouterProvider.otherwise('/');
@@ -38,10 +68,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
 
 
 
-// angular
-// .module('DogApp')
-// .config(Router);
-//
 // Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 // function Router($stateProvider, $urlRouterProvider, $locationProvider ) {
 //   $locationProvider.html5Mode(true);
