@@ -15,25 +15,25 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/register',
     templateUrl: '/js/views/register.html',
     controller: 'RegisterCtrl',
-    controllerAs: 'register'
+    controllerAs: 'vm'
   })
   .state('login', {
     url: '/login',
     templateUrl: '/js/views/login.html',
     controller: 'LoginCtrl',
-    controllerAs: 'login'
+    controllerAs: 'vm'
   })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/js/views/users/index.html',
     controller: 'UsersIndexCtrl',
-    controllerAs: 'usersIndex'
+    controllerAs: 'vm'
   })
   .state('usersShow', {
     url: '/users/:id',
     templateUrl: '/js/views/users/show.html',
     controller: 'UsersShowCtrl',
-    controllerAs: 'usersShow'
+    controllerAs: 'vm'
   })
   .state('usersEdit', {
     url: '/users/:id/edit',
@@ -45,25 +45,25 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/dogs/',
     templateUrl: '/js/views/dogs/home.html',
     controller: 'DogIndexCtrl',
-    controllerAs: 'dogs'
+    controllerAs: 'vm'
   })
   .state('dogsNew', {
     url: '/dogs/new',
     templateUrl: '/js/views/dogs/new.html',
     controller: 'DogNewCtrl',
-    controllerAs: 'dogs'
+    controllerAs: 'vm'
   })
   .state('dogsEdit', {
     url: '/dogs/:id/edit',
     templateUrl: '/js/views/dogs/edit.html',
     controller: 'DogsEditCtrl',
-    controllerAs: 'dogs'
+    controllerAs: 'vm'
   })
   .state('dogsShow', {
     url: '/dogs/:id',
     templateUrl: '/js/views/dogs/show.html',
     controller: 'DogShowCtrl',
-    controllerAs: 'dogs'
+    controllerAs: 'vm'
   });
 
   $urlRouterProvider.otherwise('/');
