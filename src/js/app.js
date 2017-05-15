@@ -5,5 +5,6 @@ angular
   'ngResource',
   'satellizer',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'angular-jwt'
 ]);
