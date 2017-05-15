@@ -1,6 +1,6 @@
 angular
-.module('DogApp')
-.controller('RegisterCtrl', RegisterCtrl);
+  .module('DogApp')
+  .controller('RegisterCtrl', RegisterCtrl);
 
 RegisterCtrl.$inject = ['User', 'CurrentUserService', '$state'];
 function RegisterCtrl(User, CurrentUserService, $state){

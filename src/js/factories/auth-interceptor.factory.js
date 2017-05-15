@@ -2,18 +2,19 @@ angular
 .module('DogApp')
 .factory('AuthInterceptor', AuthInterceptor);
 
-AuthInterceptor.$inject = ['API','TokenService'];
+AuthInterceptor.$inject = ['API', 'TokenService'];
 function AuthInterceptor(API, TokenService) {
   return {
     request(config) {
       const token = TokenService.getToken();
 
-      console.log(token);
+      if (config.url.indexOf(API) === 0 && token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
 
       return config;
     },
-
-    rresponse(res) {
+    response(res) {
       if (res.config.url.indexOf(API) === 0 && res.data.token) {
         TokenService.setToken(res.data.token);
       }
