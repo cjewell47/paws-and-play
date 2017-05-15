@@ -45,7 +45,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
@@ -99,15 +98,33 @@ describe('User Controller Test', () => {
         .end((err, res) => {
           if (err) console.log(err);
           expect(res.body)
-            .to.have.key('users');
-          expect(res.body.users)
             .to.be.an('array');
           done();
         });
     });
-
-
-
+    it('should return an array with a user object', function(done) {
+    // this.skip();
+      api
+        .get('/api/users')
+        .set('Accept', 'application/json')
+        .set('Authorization', 'Bearer '+myToken)
+        .send({
+          email: gUser.email,
+          password: 'password'
+        })
+        .end((err, res) => {
+          if (err) console.log(err);
+          expect(res.body)
+            .to.have.property(0)
+            .and.to.include.keys([
+              'username',
+              'email',
+              'dogs',
+              '_id'
+            ]);
+          done();
+        });
+    });
   });
 
   describe('GET /api/users/:id', () => {
@@ -121,7 +138,6 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .then(res => {
-          console.log(res.body);
           myToken = res.body.token;
           done();
         })
@@ -139,6 +155,7 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
+          console.log(res);
           if (err) console.log(err);
           expect(res.status)
             .to.eq(200);
@@ -204,9 +221,7 @@ describe('User Controller Test', () => {
           done();
         });
     });
-
-
-
+    
   });
 
 });
