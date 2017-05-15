@@ -102,7 +102,11 @@ describe('User Controller Test', () => {
           done();
         });
     });
+<<<<<<< HEAD
     it('should return an array with a user object', function(done) {
+=======
+    it('should return an array featuring a user at the first index', function(done) {
+>>>>>>> development
     // this.skip();
       api
         .get('/api/users')
@@ -113,6 +117,7 @@ describe('User Controller Test', () => {
           password: 'password'
         })
         .end((err, res) => {
+<<<<<<< HEAD
           if (err) console.log(err);
           expect(res.body)
             .to.have.property(0)
@@ -125,6 +130,19 @@ describe('User Controller Test', () => {
           done();
         });
     });
+=======
+          console.log(res);
+          if (err) console.log(err);
+          expect(res.body)
+            .to.have.an('object')
+            .at.property(0);
+          done();
+        });
+    });
+
+
+
+>>>>>>> development
   });
 
   describe('GET /api/users/:id', () => {
