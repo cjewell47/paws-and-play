@@ -102,7 +102,7 @@ describe('User Controller Test', () => {
         done();
       });
     });
-    it('should return an array with a user object', function(done) {
+    it('should return an array with a user object with the correct keys', function(done) {
       // this.skip();
       api
       .get('/api/users')
@@ -121,6 +121,27 @@ describe('User Controller Test', () => {
           'email',
           '_id'
         ]);
+        done();
+      });
+    });
+    it('should return an array with a user object with the correct values', function(done) {
+      // this.skip();
+      api
+      .get('/api/users')
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.body[0])
+        .to.have.property('username')
+        .that.deep.equals(gUser.username);
+        expect(res.body[0])
+        .to.have.property('email')
+        .that.deep.equals(gUser.email);
         done();
       });
     });
@@ -481,7 +502,7 @@ describe('User Controller Test', () => {
         done();
       });
     });
-    
+
 
 
   });
