@@ -2,8 +2,16 @@
   height: 350px;
   width: 350px;
   border-radius: 15px;
+  border: 2px solid silver;
 }
 
 .dogShowInfo {
   text-align: left;
+}
+
+.dogShowDesc {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
