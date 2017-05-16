@@ -1,3 +1,4 @@
+<!-- <<<<<<< HEAD
 <div class="FormPage">
   <form name="vm.addDogForm" ng-submit="vm.create()" novalidate>
   <div class="form-group">
@@ -9,6 +10,56 @@
     <p ng-message="required">A name is required!</p>
   </div>
 
+======= -->
+<div class="container login">
+  <h1>Add a new dog</h1>
+    <form name="vm.addDogForm" ng-submit="vm.create()" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" ng-model="vm.dog.name" class="form-control" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="vm.addDogForm.name.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.name.$touched)">
+        <p ng-message="required">A name is required!</p>
+      </div>
+
+      <div class="form-group">
+        <label for="breed">Breed</label><br>
+        <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" class="form-control" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="vm.addDogForm.breed.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.breed.$touched)">
+        <p ng-message="required">Breed is required!</p>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Size</label><br>
+        <input type="text" id="size" name="size" ng-model="vm.dog.size" class="form-control" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="vm.addDogForm.size.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.size.$touched)">
+        <p ng-message="required">Size is required!</p>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image</label><br>
+        <input type="text" id="image" name="image" ng-model="vm.dog.image" class="form-control" required>
+      </div>
+
+      <div class="ng-message-error" ng-messages="vm.addDogForm.image.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.image.$touched)">
+        <p ng-message="required">An image is required!</p>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label><br>
+        <textarea type="text" id="description" name="description" ng-model="vm.dog.description"></textarea>
+      </div>
+
+      <input type="submit" class="btn btn-warning" value="Add" >
+    </form>
+  </div>
+
+<!-- >>>>>>> development
   <div class="form-group">
     <label for="breed">Breed</label><br>
     <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" required>
@@ -44,4 +95,4 @@
 
   <input type="submit" class="btn btn-warning" value="Add">
 </form>
-</div>
+</div> -->
