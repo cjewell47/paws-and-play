@@ -8,6 +8,8 @@ function RegisterCtrl(User, CurrentUserService, $state){
 
   vm.register = register;
 
+
+
   function register() {
     User
       .register(vm.user)
@@ -16,6 +18,7 @@ function RegisterCtrl(User, CurrentUserService, $state){
         console.log(data);
         CurrentUserService.getUser();
         $state.go('dogsIndex');
+
       })
       .catch(err => {
         console.log(err);
