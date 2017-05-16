@@ -296,9 +296,7 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: 'Billy'
-        }
+        username: 'Billy'
       })
       .end((err, res) => {
         if (err) console.log(err);
@@ -314,9 +312,7 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: 'Billy'
-        }
+        username: 'Billy'
       })
       .end((err, res) => {
         if (err) console.log(err);
@@ -332,13 +328,11 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: 'Billy'
-        }
+        username: 'Billy'
       })
       .end((err, res) => {
         if (err) console.log(err);
-        expect(res.body.user)
+        expect(res.body)
         .to.include.keys([
           'username',
           'email',
@@ -354,16 +348,14 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: 'Billy'
-        }
+        username: 'Billy'
       })
       .end((err, res) => {
         if (err) console.log(err);
-        expect(res.body.user)
+        expect(res.body)
         .to.have.property('username')
         .that.deep.equals('Billy');
-        expect(res.body.user)
+        expect(res.body)
         .to.have.property('email')
         .that.deep.equals(gUser.email);
         done();
@@ -376,9 +368,7 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: 'Billy'
-        }
+        username: 'Billy'
       })
       .end((err, res) => {
         if (err) console.log(err);
@@ -396,9 +386,7 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          username: ''
-        }
+        username: ''
       })
       .end((err, res) => {
         if (err) console.log(err);
@@ -416,9 +404,7 @@ describe('User Controller Test', () => {
       .set('Accept', 'application/json')
       .set('Authorization', 'Bearer '+myToken)
       .send({
-        user: {
-          email: 'chance@chance.com'
-        }
+        username: 'chance'
       })
       .end((err, res) => {
         if (err) console.log(err);
