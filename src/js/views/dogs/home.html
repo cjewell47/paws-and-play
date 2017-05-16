@@ -2,7 +2,8 @@
 <h2>dogs near you</h2>
   <div class="dogList">
     <div class="row">
-        <div ng-repeat="dog in vm.dogs" index="$index">
+      <input type="text" class="search" ng-model="vm.q" placeholder="Name or Breed...">
+        <div ng-repeat="dog in vm.filtered" index="$index">
           <div class="col-md-4 col-s-6">
           <img ng-src="{{dog.image}}" ui-sref="dogsShow({ id: dog._id })">
           <h4><a class="dogHomeName" ui-sref="dogsShow({ id: dog._id })">{{ dog.name }}</a></h4>
