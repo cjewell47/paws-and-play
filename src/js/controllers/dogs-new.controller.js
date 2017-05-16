@@ -8,14 +8,16 @@ function DogNewCtrl (Dog, $state) {
   const vm = this;
   vm.create= dogCreate;
   function dogCreate(){
-    Dog
-    .save(vm.dog)
-    .$promise
-    .then(() => {
-      $state.go('dogsIndex');
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    if (vm.addDogForm.$valid) {
+      Dog
+      .save(vm.dog)
+      .$promise
+      .then(() => {
+        $state.go('dogsIndex');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
   }
 }
