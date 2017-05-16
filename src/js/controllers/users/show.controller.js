@@ -22,24 +22,6 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
     });
   }
 
-  function dogOpenModal() {
-    $uibModal.open({
-      templateUrl: 'js/views/templates/dogDelete.html',
-      controller: 'DogsDeleteCtrl as vm',
-      resolve: {
-        dog: () => {
-          return vm.dog;
-        },
-        resolve: {
-          user: () => {
-            return vm.user;
-          }
-        }
-      }
-    });
-  }
-
   vm.userOpenModal = userOpenModal;
 
-  vm.dogOpenModal = dogOpenModal;
 }
