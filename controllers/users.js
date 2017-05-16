@@ -6,6 +6,7 @@ module.exports = {
 };
 
 const User = require('../models/user');
+const Dog  = require('../models/dog');
 
 function usersIndex(req, res) {
   User

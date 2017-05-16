@@ -16,6 +16,10 @@
     <label for="image">Image</label><br>
     <input type="text" id="image" name="image" ng-model="vm.dog.image">
   </div>
+  <div class="form-group">
+    <label for="description">Description</label><br>
+    <textarea type="text" id="description" name="description" ng-model="vm.dog.description"></textarea>
+  </div>
   <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Back</button>
 
   <input type="submit" class="btn btn-warning" value="Add">
