@@ -24,10 +24,15 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" uib-collapse="main.isNavCollapsed">
         <div class="logo">
           <a class="navbar-brand" ui-sref="home">
-          <img src="images/logoo.png" alt="Paws Logo"></a>
+            <img src="images/logoo.png" alt="Paws Logo">
+          </a>
         </div>
         <!-- <a class="navbar-brand" ui-sref="home">Paws and Play</a> -->
-        <a class="navbar-brand" ui-sref="dogsIndex" ng-show="main.user">All Dogs</a>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a ui-sref="dogsIndex" ng-show="main.user">All Dogs</a>
+          </li>
+        </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li ng-show="main.user">
