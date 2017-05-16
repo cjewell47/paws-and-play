@@ -16,7 +16,8 @@
     <label for="image">Image</label><br>
     <input type="text" id="image" name="image" ng-model="vm.dog.image">
   </div>
+  <button type="button" name="back" class="btn btn-info" ui-sref="dogsShow({ id: vm.dog._id})">Back</button>
 
-  <input type="submit" class="btn btn-warning" value="Add">
+  <input type="submit" class="btn btn-warning" value="Save">
 </form>
 </div>
