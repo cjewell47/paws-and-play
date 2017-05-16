@@ -8,8 +8,9 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
   const vm = this;
 
   vm.user = User.get({ id: $stateParams.id });
+  vm.dogs  = vm.user.dogs;
 
-  function openModal() {
+  function userOpenModal() {
     $uibModal.open({
       templateUrl: 'js/views/templates/userDelete.html',
       controller: 'UsersDeleteCtrl as vm',
@@ -21,6 +22,24 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
     });
   }
 
+  function dogOpenModal() {
+    $uibModal.open({
+      templateUrl: 'js/views/templates/dogDelete.html',
+      controller: 'DogsDeleteCtrl as vm',
+      resolve: {
+        dog: () => {
+          return vm.dog;
+        },
+        resolve: {
+          user: () => {
+            return vm.user;
+          }
+        }
+      }
+    });
+  }
 
-  vm.open = openModal;
+  vm.userOpenModal = userOpenModal;
+
+  vm.dogOpenModal = dogOpenModal;
 }

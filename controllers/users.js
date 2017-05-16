@@ -22,7 +22,14 @@ function usersShow(req, res) {
   .exec()
   .then(user => {
     if (!user) return res.status(404).json({ message: 'User not found.' });
-    return res.status(200).json(user);
+
+    Dog
+      .find({ owner: user._id })
+      .exec()
+      .then(dogs => {
+        user.dogs = dogs;
+        return res.status(200).json(user);
+      });
   })
   .catch(() => res.status(500).json({ message: 'Something went wrong.' }));
 }

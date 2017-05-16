@@ -2,8 +2,8 @@ angular
   .module('DogApp')
   .controller('DogsEditCtrl', DogsEditCtrl);
 
-DogsEditCtrl.$inject = ['$stateParams', '$state', 'Dog', '$location'];
-function DogsEditCtrl($stateParams, $state, Dog, $location) {
+DogsEditCtrl.$inject = ['$stateParams', '$state', 'Dog', '$location', 'TokenService'];
+function DogsEditCtrl($stateParams, $state, Dog, $location, TokenService) {
   const vm = this;
 
   vm.dog = Dog.get($stateParams);
@@ -16,7 +16,7 @@ function DogsEditCtrl($stateParams, $state, Dog, $location) {
         .update({ id: $stateParams.id }, vm.dog)
         .$promise
         .then(dog => {
-          $location.path(`/dogs/${dog._id}`);
+          $state.go('usersShow',{ id: TokenService.decodeToken().id });
         });
     }
   }
