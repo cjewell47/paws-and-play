@@ -6,7 +6,7 @@ const dogSchema = new mongoose.Schema({
   breed: { type: String, required: true },
   description: { type: String },
   image: { type: String, required: true },
-  size: {type: String}
+  size: {type: String }
 },{
   timestamps: true
 });

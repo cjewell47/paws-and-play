@@ -8,13 +8,21 @@
 @import "dogsIndex";
 @import "dogShow";
 
+html {
+  height: 100%
+}
 
 body {
-  background-color: #7DB4C7;
+  background-color: #AED8E8;
   font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 350px;
 }
 
 .navbar {
+  font-size: 17px;
+  color: #333;
   background-color: #5DD39E;
   border-radius: 3px;
   border: none;
@@ -68,4 +76,33 @@ h4{
   width: 80%;
   height: 500px;
   margin: 50px;
+}
+
+footer {
+  font-size: 18px;
+  background-color: #26657A;
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  :hover {
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    color: #90BFCF;
+
+  }
+  ul {
+    float: left;
+    width: 150px;
+  }
+  p{
+    float: right;
+    line-height: 70px;
+    color: #90BFCF;
+  }
 }
