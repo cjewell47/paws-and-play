@@ -167,11 +167,10 @@ describe('Dogs Controller Test', () => {
         password: 'password'
       })
       .end((err, res) => {
-        console.log(res);
         if (err) console.log(err);
         expect(res.body[0])
           .to.have.property('owner')
-          .that.deep.equals(gUser._id);
+          .that.deep.equals(gUser._id.toString());
         expect(res.body[0])
           .to.have.property('name')
           .that.deep.equals('hercules');
@@ -181,6 +180,73 @@ describe('Dogs Controller Test', () => {
         expect(res.body[0])
           .to.have.property('image')
           .that.deep.equals('http://fillmurray.com/150/150');
+        done();
+      });
+    });
+
+  });
+
+  describe('GET /api/dogs/:id', () => {
+    let myDog;
+
+    beforeEach(done => {
+      Dog
+        .remove()
+        .then(() => done())
+        .catch(done);
+    });
+
+    beforeEach(done => {
+      api
+      .post('/api/login')
+      .set('Accept', 'application/json')
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .then(res => {
+        myToken = res.body.token;
+        done();
+      })
+      .catch(done);
+    });
+
+    beforeEach(done => {
+      Dog
+        .create({
+          owner: gUser._id,
+          name: 'hercules',
+          breed: 'chihuahua',
+          image: 'http://fillmurray.com/150/150'
+        })
+        .then(() => done())
+        .catch(done);
+    });
+
+    afterEach(done => {
+      Dog
+        .remove()
+        .then(dog => {
+          myDog = dog;
+          done();
+        })
+        .catch(done);
+    });
+
+    it('should return a 200 response', function(done) {
+      // this.skip();
+      api
+      .get(`/api/users/${myDog._id}`)
+      .set('Accept', 'application/json')
+      .set('Authorization', 'Bearer '+myToken)
+      .send({
+        email: gUser.email,
+        password: 'password'
+      })
+      .end((err, res) => {
+        if (err) console.log(err);
+        expect(res.status)
+        .to.eq(200);
         done();
       });
     });

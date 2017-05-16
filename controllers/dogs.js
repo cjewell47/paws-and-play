@@ -20,6 +20,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Dog
     .findById(req.params.id)
+    .populate('owner')
     .then((dog) => {
       if(!dog) return res.notFound();
       res.json(dog);
