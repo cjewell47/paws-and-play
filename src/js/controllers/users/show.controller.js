@@ -11,7 +11,7 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
 
   function openModal() {
     $uibModal.open({
-      templateUrl: 'js/views/templates/delete.html',
+      templateUrl: 'js/views/templates/userDelete.html',
       controller: 'UsersDeleteCtrl as vm',
       resolve: {
         user: () => {
