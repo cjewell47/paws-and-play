@@ -9,5 +9,6 @@ function DogIndexCtrl (Dog) {
   dogsIndex();
   function dogsIndex() {
     vm.dogs = Dog.query();
+
   }
 }
