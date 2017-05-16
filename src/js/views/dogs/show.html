@@ -4,11 +4,12 @@
   <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
   <p class="showSize"><strong>Size:</strong> {{ vm.dog.size }}</p>
   <img ng-src="{{ vm.dog.image}}">
+  <p>{{ vm.dog.description }}</p>
   <h4 class="media-heading">Owner:{{vm.dog.owner.username }}</h4>
 
   <br>
   <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Back</button>
-  <!-- <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: vm.dog._id})">Edit</button>
+  <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: vm.dog._id})">Edit</button>
 
-  <button type="button" class="btn btn-danger" ng-click="vm.delete(dog)">Delete</button> -->
+  <button type="button" class="btn btn-danger" ng-click="vm.open()">Delete</button>
 </div>

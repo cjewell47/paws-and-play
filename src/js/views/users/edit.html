@@ -6,23 +6,14 @@
       <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="{{vm.username}}">
     </div>
     <div class="form-group">
-      <input class="form-control" type="text" name="firstName" ng-model="vm.user.firstName" placeholder="First name">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="text" name="lastName" ng-model="vm.user.lastName" placeholder="Last name">
-    </div>
-    <div class="form-group">
       <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="Image">
     </div>
     <div class="form-group">
       <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email">
     </div>
-    <div class="form-group">
-      <input class="form-control" type="password" name="password" ng-model="vm.user.password" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <input class="form-control" type="password" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation" placeholder="Password confirmation">
-    </div>
+    <button type="button" name="back" class="btn btn-info" ui-sref="usersShow({ id: vm.user._id })">Back</button>
+
     <input class="btn btn-primary" type="submit" value="Update" />
+
   </form>
 </div>

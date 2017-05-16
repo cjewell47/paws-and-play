@@ -2,11 +2,10 @@ angular
 .module('DogApp')
 .controller('DogShowCtrl', DogShowCtrl);
 
-DogShowCtrl.$inject = ['Dog', '$stateParams', '$state'];
+DogShowCtrl.$inject = ['Dog', '$stateParams', '$state', '$uibModal'];
 
-function DogShowCtrl (Dog, $stateParams, $state) {
+function DogShowCtrl (Dog, $stateParams, $state, $uibModal) {
   const vm = this;
-  vm.delete= dogDelete;
 
   Dog
   .get($stateParams)
@@ -15,12 +14,18 @@ function DogShowCtrl (Dog, $stateParams, $state) {
     vm.dog = data;
   });
 
-  function dogDelete () {
-    Dog
-    .remove($stateParams)
-    .$promise
-    .then(() => {
-      $state.go('dogsIndex');
+  function openModal() {
+    $uibModal.open({
+      templateUrl: 'js/views/templates/dogDelete.html',
+      controller: 'DogsDeleteCtrl as vm',
+      resolve: {
+        dog: () => {
+          return vm.dog;
+        }
+      }
     });
   }
+
+  vm.open = openModal;
+
 }

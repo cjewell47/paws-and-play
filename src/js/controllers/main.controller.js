@@ -1,13 +1,14 @@
 angular
-  .module('DogApp')
-  .controller('MainCtrl', MainCtrl);
+.module('DogApp')
+.controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$rootScope', 'CurrentUserService', '$state'];
 function MainCtrl($rootScope, CurrentUserService, $state) {
   const vm = this;
 
+  
   $rootScope.$on('loggedIn', () => {
-    console.log('USER LOGGED IN AHHHHHHHHHH');
+    console.log('USER LOGGED IN');
     vm.user = CurrentUserService.currentUser;
   });
 
