@@ -1,19 +1,40 @@
 <h1>Register</h1>
-<form ng-submit="vm.register()">
+<form name="vm.registerForm" ng-submit="vm.register()" novalidate>
   <div class="form-group">
-    <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="Username">
+    <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="Username" required>
   </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.username.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.username.$touched)">
+    <p ng-message="required">A username is required!</p>
+  </div>
+
   <div class="form-group">
     <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="Image">
   </div>
+
   <div class="form-group">
-    <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email">
+    <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email" required>
   </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.email.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.email.$touched)">
+    <p ng-message="required">An email address is required!</p>
+  </div>
+
   <div class="form-group">
-    <input class="form-control" type="password" name="password" ng-model="vm.user.password" placeholder="Password">
+    <input class="form-control" type="password" name="password" ng-model="vm.user.password" placeholder="Password" required>
   </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.password.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password.$touched)">
+    <p ng-message="required">An password is required!</p>
+  </div>
+
   <div class="form-group">
-    <input class="form-control" type="password" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation" placeholder="Password confirmation">
+    <input class="form-control" type="password" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation" placeholder="Password confirmation" required>
   </div>
+
+  <div class="ng-message-error" ng-messages="vm.registerForm.passwordConfirmation.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.passwordConfirmation.$touched)">
+    <p ng-message="required">Please confirm your password</p>
+  </div>
+
   <input class="btn btn-primary" type="submit" value="Submit" />
 </form>

@@ -11,17 +11,19 @@ function RegisterCtrl(User, CurrentUserService, $state){
 
 
   function register() {
-    User
-      .register(vm.user)
-      .$promise
-      .then(data => {
-        console.log(data);
-        CurrentUserService.getUser();
-        $state.go('dogsIndex');
+    if (vm.registerForm.$valid) {
+      User
+        .register(vm.user)
+        .$promise
+        .then(data => {
+          console.log(data);
+          CurrentUserService.getUser();
+          $state.go('dogsIndex');
 
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 }

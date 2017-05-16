@@ -6,5 +6,6 @@ angular
   'satellizer',
   'ui.bootstrap',
   'ngAnimate',
-  'angular-jwt'
+  'angular-jwt',
+  'ngMessages'
 ]);
