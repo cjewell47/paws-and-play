@@ -11,7 +11,7 @@ function DogsEditCtrl($stateParams, $state, Dog, $location) {
 
 
   function dogsUpdate() {
-    if (vm.registerForm.$valid) {
+    if (vm.editDogForm.$valid) {
       Dog
         .update({ id: $stateParams.id }, vm.dog)
         .$promise

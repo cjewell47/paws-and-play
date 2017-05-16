@@ -12,11 +12,13 @@ function UsersEditCtrl($stateParams, $state, User, $location) {
 
 
   function usersUpdate() {
-    User
-    .update({ id: $stateParams.id }, vm.user)
-    .$promise
-    .then(user => {
-      $state.go('usersShow', { id: user._id });
-    });
+    if (vm.editUserForm.$valid) {
+      User
+      .update({ id: $stateParams.id }, vm.user)
+      .$promise
+      .then(user => {
+        $state.go('usersShow', { id: user._id });
+      });
+    }
   }
 }
