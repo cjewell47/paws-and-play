@@ -3,11 +3,11 @@
   <div class="dogList">
     <div class="row">
       <input type="text" class="search" ng-model="vm.q" placeholder="Search by Breed...">
-      <!-- <div class="l-box">
+      <div class="l-box">
         <input type="checkbox" id="size" ng-model="vm.useSsize">
         <label for="size">Size</label>
         <input type="range" ng-model="vm.size" min="1" max="3" ng-disabled="!vm.useSize">
-      </div> -->
+      </div>
 
         <div ng-repeat="dog in vm.dogs | filter: { breed: vm.q }" index="$index">
           <div class="col-md-4 col-s-6">
