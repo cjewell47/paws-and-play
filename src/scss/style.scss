@@ -11,13 +11,17 @@ html {
   height: 100%
 }
 
-
 body {
-  background-color: #7DB4C7;
+  background-color: #AED8E8;
   font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 350px;
 }
 
 .navbar {
+  font-size: 17px;
+  color: #333;
   background-color: #5DD39E;
   border-radius: 3px;
   border: none;
@@ -74,8 +78,9 @@ h4{
 }
 
 footer {
-  background-color: #191919;
-  padding: 27px;
+  font-size: 18px;
+  background-color: #26657A;
+  padding: 30px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -87,7 +92,7 @@ footer {
 
   a {
     text-decoration: none;
-    color: #888;
+    color: #90BFCF;
 
   }
   ul {
@@ -97,6 +102,6 @@ footer {
   p{
     float: right;
     line-height: 70px;
-    color: #666;
+    color: #90BFCF;
   }
 }
