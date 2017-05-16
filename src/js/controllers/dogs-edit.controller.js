@@ -11,11 +11,13 @@ function DogsEditCtrl($stateParams, $state, Dog, $location) {
 
 
   function dogsUpdate() {
-    Dog
-      .update({ id: $stateParams.id }, vm.dog)
-      .$promise
-      .then(dog => {
-        $location.path(`/dogs/${dog._id}`);
-      });
+    if (vm.editDogForm.$valid) {
+      Dog
+        .update({ id: $stateParams.id }, vm.dog)
+        .$promise
+        .then(dog => {
+          $location.path(`/dogs/${dog._id}`);
+        });
+    }
   }
 }
