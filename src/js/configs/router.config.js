@@ -15,19 +15,55 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/register',
     templateUrl: '/js/views/register.html',
     controller: 'RegisterCtrl',
-    controllerAs: 'register'
+    controllerAs: 'vm'
   })
   .state('login', {
     url: '/login',
     templateUrl: '/js/views/login.html',
     controller: 'LoginCtrl',
-    controllerAs: 'login'
+    controllerAs: 'vm'
   })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/js/views/users/index.html',
     controller: 'UsersIndexCtrl',
-    controllerAs: 'usersIndex'
+    controllerAs: 'vm'
+  })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl',
+    controllerAs: 'vm'
+  })
+  .state('usersEdit', {
+    url: '/users/:id/edit',
+    templateUrl: '/js/views/users/edit.html',
+    controller: 'UsersEditCtrl',
+    controllerAs: 'vm'
+  })
+  .state('dogsIndex', {
+    url: '/dogs/',
+    templateUrl: '/js/views/dogs/home.html',
+    controller: 'DogIndexCtrl',
+    controllerAs: 'vm'
+  })
+  .state('dogsNew', {
+    url: '/dogs/new',
+    templateUrl: '/js/views/dogs/new.html',
+    controller: 'DogNewCtrl',
+    controllerAs: 'vm'
+  })
+  .state('dogsEdit', {
+    url: '/dogs/:id/edit',
+    templateUrl: '/js/views/dogs/edit.html',
+    controller: 'DogsEditCtrl',
+    controllerAs: 'vm'
+  })
+  .state('dogsShow', {
+    url: '/dogs/:id',
+    templateUrl: '/js/views/dogs/show.html',
+    controller: 'DogShowCtrl',
+    controllerAs: 'vm'
   });
 
   $urlRouterProvider.otherwise('/');
@@ -38,10 +74,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
 
 
 
-// angular
-// .module('DogApp')
-// .config(Router);
-//
 // Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 // function Router($stateProvider, $urlRouterProvider, $locationProvider ) {
 //   $locationProvider.html5Mode(true);

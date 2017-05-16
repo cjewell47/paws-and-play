@@ -1,4 +1,4 @@
-const Dog = require('../models/user');
+const Dog = require('../models/dog');
 
 function indexRoute(req, res, next) {
   Dog
@@ -8,8 +8,11 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  Dog
-    .create(req.body)
+  const dog = new Dog(req.body);
+  dog.owner = req.user._id;
+
+  dog
+    .save()
     .then((dog) => res.status(201).json(dog))
     .catch(next);
 }

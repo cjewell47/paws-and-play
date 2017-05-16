@@ -13,6 +13,9 @@ function DogNewCtrl (Dog, $state) {
     .$promise
     .then(() => {
       $state.go('dogsIndex');
+    })
+    .catch(err => {
+      console.log(err);
     });
   }
 }

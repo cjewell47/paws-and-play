@@ -7,7 +7,7 @@ function authenticationsRegister(req, res) {
     .create(req.body, (err, user) => {
       if (err) return res.status(500).json({ message: err});
 
-      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });
+      const token = jwt.sign({ id: user.id }, env.secret, { expiresIn: 60*60*24 });
 
       return res.status(201).json({
         message: `Welcome ${user.username}!`,
@@ -25,7 +25,7 @@ function authenticationsLogin(req, res) {
         return res.status(401).json({ message: 'Unauthorized.' });
       }
 
-      const token = jwt.sign(user._id, env.secret, { expiresIn: 60*60*24 });
+      const token = jwt.sign({ id: user.id }, env.secret, { expiresIn: 60*60*24 });
 
       return res.status(200).json({
         message: `Welcome back ${user.username}!`,
