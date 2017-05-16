@@ -1,44 +1,3 @@
-// Import all of your scss files here
-// Import all of your scss files here
-@import "dogAnimation";
-@import "home";
-@import "login";
-@import "profiles";
-
-img {
-  width: 400px;
-  height: 300px;
-}
-.FormPage{
-text-align: center;
-}
-.showName {
-  font-size: 50px;
-}
-.showBreed, .showSize {
-  font-size: 30px;
-}
-h4{
-  a {
-    background-color: rgba(0,0,255,0.4);
-    color: white;
-    font-size: 25px;
-    border-radius: 5px;
-    text-decoration: none !important;
-  }
-  a:hover {
-    color: rgba(255, 0, 0, 1);
-  }
-}
-
-
-.banner img {
-  width: 80%;
-  height: 500px;
-  margin: 50px;
-}
-
-
 // DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO DOGGGOOO
 .dogbox {
   background: #B5DFA5;
@@ -469,28 +428,4 @@ body {
 *, *:before, *:after {
   box-sizing: border-box;
   position: relative;
-}
-
-
-.doggo img {
-  display: inline-block;
-  position: relative;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 50%;
-  border-radius: 50%;
-  float: left;
-  padding-left: 0px;
-  z-index: 2;
-
-    :hover {
-      width: 400px;
-      height: 400px;
-    }
-
-  p{
-    text-align: justify;
-    width: 300px;
-  }
 }
