@@ -1,9 +1,26 @@
-<div class="FormPage">
-  <form ng-submit="vm.create()">
-  <div class="form-group">
-    <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" ng-model="vm.dog.name">
+<div class="container login">
+  <h1>Add a new dog</h1>
+    <form ng-submit="vm.create()">
+      <div class="form-group">
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" ng-model="vm.dog.name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="breed">Breed</label><br>
+        <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" class="form-control" >
+      </div>
+      <div class="form-group">
+        <label for="size">Size</label><br>
+        <input type="text" id="size" name="size" ng-model="vm.dog.size" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label><br>
+        <input type="text" id="image" name="image" ng-model="vm.dog.image" class="form-control">
+      </div>
+      <input type="submit" class="btn btn-warning" value="Add" >
+    </form>
   </div>
+
   <div class="form-group">
     <label for="breed">Breed</label><br>
     <input type="text" id="breed" name="breed" ng-model="vm.dog.breed">
@@ -15,6 +32,10 @@
   <div class="form-group">
     <label for="image">Image</label><br>
     <input type="text" id="image" name="image" ng-model="vm.dog.image">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label><br>
+    <textarea type="text" id="description" name="description" ng-model="vm.dog.description"></textarea>
   </div>
   <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Back</button>
 
