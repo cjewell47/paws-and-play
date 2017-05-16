@@ -6,6 +6,8 @@
           <img ng-src="{{ vm.dog.image }}">
         </div>
         <div class="col-md-6">
+      <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
+
           <div class="dogShowInfo">
             <h2 class="showName">{{ vm.dog.name }}</h2>
             <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
@@ -19,15 +21,27 @@
       <div class="row">
         <div class="col-md-6">
           <div class="dogShowDesc">
-            Puppy kitty ipsum dolor sit good dog . Food nap toy tabby bird food catch dog house commands cat bird food purr water lol catz. Feathers harness warm scratcher walk paws warm lazy dog foot gimme five fur speak bark walk catch barky litter box heel treats. Toy maine coon cat shake grooming roll over carrier fleas foot pet right paw feathers meow slobber tongue speak. Canary toys foot window cockatiel park nap.
+            <h3>About {{ vm.dog.name }}:</h3>
+            <p>Puppy kitty ipsum dolor sit good dog . Food nap toy tabby bird food catch dog house commands cat bird food purr water lol catz. Feathers harness warm scratcher walk paws warm lazy dog foot gimme five fur speak bark walk catch barky litter box heel treats. Toy maine coon cat shake grooming roll over carrier fleas foot pet right paw feathers meow slobber tongue speak. Canary toys foot window cockatiel park nap.</p>
             <p>{{ vm.dog.description }}</p>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="dogAvailability">
+            <h3>Available:</h3>
+            <p>Weekdays daytime</p>
+            <p>Weekdays evening</p>
+            <p>Weekends</p>
+            <p>Holidays</p>
+          </div>
+          <div class="showButton">
+          <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Return to Dog Index</button>
+          </div>
+        </div>
       </div>
-
-
-      <br>
-      <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Return to Dog Index</button>
+      <!-- <div class="col-md-12">
+        <button type="button" name="back" class="btn btn-info showBack" ui-sref="dogsIndex">Return to Dog Index</button>
+      </div> -->
     </div>
   </div>
 </div>
