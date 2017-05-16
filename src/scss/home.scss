@@ -1,0 +1,22 @@
+.doggo img {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  padding-left: 0px;
+  z-index: 2;
+
+    :hover {
+      width: 400px;
+      height: 400px;
+    }
+
+  p{
+    text-align: justify;
+    width: 300px;
+  }
+}
