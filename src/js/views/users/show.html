@@ -10,9 +10,13 @@
     <p>Email:{{ vm.user.email }}</p>
   </div>
 </div>
-<p>{{usersShow.user}}</p>
+
 <button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: main.user._id})">Edit</button>
+<button type="button" class="btn btn-danger" ng-click="vm.userOpenModal()">Delete</button>
 
-
-<button type="button" class="btn btn-danger" ng-click="vm.open()">Delete</button>
-<a href="#"><p>my dogs</p></a>
+<h2>Dogs</h2>
+<ul ng-repeat="dog in vm.user.dogs">
+  <a><li>{{ dog.name }}</li></a>
+  <a><img  ng-src="{{ dog.image }}" href=""></a>
+  <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
+</ul>

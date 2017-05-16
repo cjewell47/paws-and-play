@@ -1,10 +1,10 @@
 angular
-  .module('DogApp')
-  .controller('DogsDeleteCtrl', DogsDeleteCtrl);
+.module('DogApp')
+.controller('DogsDeleteCtrl', DogsDeleteCtrl);
 
 
-DogsDeleteCtrl.$inject = ['$uibModalInstance', 'dog', '$state'];
-function DogsDeleteCtrl($uibModalInstance, dog, $state) {
+DogsDeleteCtrl.$inject = ['$uibModalInstance', 'dog', '$state', '$location'];
+function DogsDeleteCtrl($uibModalInstance, dog, $state, $location) {
   var vm = this;
   vm.dog = dog;
 
@@ -16,11 +16,11 @@ function DogsDeleteCtrl($uibModalInstance, dog, $state) {
 
   function dogsDelete() {
     vm.dog
-      .$remove()
-      .then(() => {
-        $state.go('dogsIndex');
-        $uibModalInstance.close();
-      });
+    .$remove()
+    .then(() => {
+      // $location.path(`/users/${user._id}`);
+      $uibModalInstance.close();
+    });
   }
 
   vm.delete = dogsDelete;
