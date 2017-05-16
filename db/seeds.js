@@ -16,32 +16,38 @@ User
       username: 'jackie',
       email: 'jackie@jackie.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }, {
       username: 'bobby',
       email: 'bobby@bobby.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }, {
       username: 'raul',
       email: 'raul@raul.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }, {
       username: 'zinedine',
       email: 'zinedine@zinedine.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }, {
       username: 'diego',
       email: 'diego@diego.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }, {
       username: 'lebron',
       email: 'lebron@lebron.com',
       password: 'password',
-      passwordConfirmation: 'password'
+      passwordConfirmation: 'password',
+      image: 'http://fillmurray.com/200/200'
     }
   ])
   .then(users => {

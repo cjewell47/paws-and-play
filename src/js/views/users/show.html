@@ -11,7 +11,7 @@
   </div>
 </div>
 <p>{{usersShow.user}}</p>
-<button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: usersShow.user._id})">Edit</button>
+<button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: main.user._id})">Edit</button>
 
 
-<button type="button" class="btn btn-danger" ng-click="users.delete(user)">Delete</button>
+<button type="button" class="btn btn-danger" ng-click="vm.open()">Delete</button>
