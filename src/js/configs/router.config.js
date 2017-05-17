@@ -64,7 +64,20 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/dogs/show.html',
     controller: 'DogShowCtrl',
     controllerAs: 'vm'
-  });
+  })
+
+  // .state('walksNew', {
+  //   url: '/dogs/:id/walks',
+  //   templateUrl: '/js/views/walks/new.html',
+  //   controller: 'WalkNewCtrl',
+  //   controllerAs: 'vm'
+  // })
+
+
+
+
+
+  ;
 
   $urlRouterProvider.otherwise('/');
 }
