@@ -6,6 +6,7 @@ DogShowCtrl.$inject = ['Dog', '$stateParams', '$state', '$uibModal'];
 
 function DogShowCtrl (Dog, $stateParams, $state, $uibModal) {
   const vm = this;
+
   Dog
   .get($stateParams)
   .$promise

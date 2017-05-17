@@ -17,7 +17,7 @@
             <p class="showSize"><strong>Size:</strong> {{ vm.dog.size }}</p>
             <p class="showOwner"><strong>Owner:</strong> {{ vm.dog.owner.username }}</p>
             <p class="showLocation"><strong>Location:</strong></p>
-            <p class="showOwner"><strong>Walk:</strong> {{ vm.dog.walk.available }}</p>
+            <button class="showOwner" ng-click="vm.walkOpenModal()">Available Dates</button>
 
             <!-- <h4 class="media-heading"><strong>Owner:</strong> {{vm.dog.owner.username }}</h4> -->
           </div>
