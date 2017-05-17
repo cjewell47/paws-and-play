@@ -66,12 +66,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controllerAs: 'vm'
   })
 
-  .state('walksNew', {
-    url: '/dogs/:id/walks',
-    templateUrl: '/js/views/walks/new.html',
-    controller: 'WalkNewCtrl',
-    controllerAs: 'vm'
-  })
+  // .state('walksNew', {
+  //   url: '/dogs/:id/walks',
+  //   templateUrl: '/js/views/walks/new.html',
+  //   controller: 'WalkNewCtrl',
+  //   controllerAs: 'vm'
+  // })
 
 
 
