@@ -11,12 +11,37 @@
 }
 
 .dogHomeName {
-display: block;
-text-align: center;
-width: 250px;
-margin: auto;
-background-color: #5DD39E;
-border: 1px solid silver;
+  display: block;
+  text-align: center;
+  width: 250px;
+  margin: auto;
+  background-color: #518394;
+  border: 1px solid silver;
+
+  &:hover {
+    background-color: sliver;
+  }
+}
+.dogHomeH2 {
+  margin-left: 20px;
+}
+.dogHomeBreed {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+.dogHomeSize {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+.sizeText {
+  font-size: 18px;
+  padding-left: 25px;
+}
+.listBlock {
+  border-top: 2px solid silver;
+  margin-top: 20px;
 }
 
 
