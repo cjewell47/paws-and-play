@@ -7,7 +7,8 @@ function Dog(API, $resource) {
   return $resource(`${API}/dogs/:id`,
     { id: '@_id' },
     {
-      'update': { method: 'PUT'}
+      'update': { method: 'PUT'},
+      'addWalk': { method: 'PUT', url: `${API}/dogs/:id/walks`}
     }
   );
 }

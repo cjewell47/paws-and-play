@@ -14,6 +14,12 @@ function WalkSelectCtrl(dog, $uibModalInstance) {
   vm.close = closeModal;
 
   function walkSelect() {
+    Dog
+      .update();
+  }
+
+  function setActive(date) {
+    vm.date = date;
   }
 
   vm.select = walkSelect;

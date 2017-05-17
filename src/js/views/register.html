@@ -22,19 +22,21 @@
   </div>
 
   <div class="form-group">
-    <input class="form-control"  type="password" name="password" ng-model="vm.user.password" placeholder="Password" required >
+    <input class="form-control"  type="password" name="password" ng-model="vm.user.password" placeholder="Password" required ng-minlength="6">
   </div>
 
   <div class="ng-message-error" ng-messages="vm.registerForm.password.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.password.$touched)">
     <p ng-message="required">An password is required!</p>
+    <p ng-message="minlength">Your password must be at least 6 characters</p>
   </div>
 
   <div class="form-group">
-    <input class="form-control" type="password" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation" placeholder="Password confirmation" required>
+    <input class="form-control" type="password" name="passwordConfirmation" ng-model="vm.user.passwordConfirmation" placeholder="Password confirmation" required ng-pattern="vm.user.password">
   </div>
 
   <div class="ng-message-error" ng-messages="vm.registerForm.passwordConfirmation.$error" ng-show="(vm.registerForm.$submitted || vm.registerForm.passwordConfirmation.$touched)">
     <p ng-message="required">Please confirm your password</p>
+    <p ng-message="pattern">Your passwords must match</p>
   </div>
 
   <input class="btn btn-primary loginButton" type="submit" value="Submit" />
