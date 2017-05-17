@@ -1,22 +1,48 @@
-<h1>Profile</h1>
-<div class="media"  >
-  <div class="media-left">
-    <a ui-sref="#">
-      <img class="media-object" ng-src="{{ vm.user.image }}">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Name: {{ vm.user.username }}</h4>
-    <p>Email: {{ vm.user.email }}</p>
+<div class="container">
+  <div class="FormPage">
+    <div class="userShowMain">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Your profile</h1>
+          <a ui-sref="#"><img ng-src="{{ vm.user.image }}"></a>
+        </div>
+        <div class="col-md-6 userInfoBlock">
+          <div class="userShowInfo">
+            <h2 class="heading">Name: {{ vm.user.username }}</h2>
+            <p>Email: {{ vm.user.email }}</p>
+            <p>Mobile: </p>
+            <p>Postcode: </p>
+          </div>
+          <div class="userUpdateButtons">
+            <button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: main.user._id})">Edit</button>
+            <button type="button" class="btn btn-danger" ng-click="vm.userOpenModal()">Delete</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Your dogs</h2>
+          <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
+            <a ui-sref="#"><img ng-src="{{ dog.image }}"></a>
+          </ul>
+        </div>
+        <div class="col-md-6 userInfoBlock">
+          <div class="userShowInfo">
+            <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
+              <h2 class="heading"><li>{{ dog.name }}</li></h2>
+              <p>Breed: {{ dog.breed }}</p>
+              <p>Size: {{ dog.size }}</p>
+              <p>Description: {{ dog.description }}</p>
+              <p>Availability: </p>
+              <div class="userUpdateButton">
+                <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
+                <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: main.user._id})">Edit</button>
-<button type="button" class="btn btn-danger" ng-click="vm.userOpenModal()">Delete</button>
-
-<h2>Dogs</h2>
-<ul ng-repeat="dog in vm.user.dogs">
-  <a><li>{{ dog.name }}</li></a>
-  <a><img  ng-src="{{ dog.image }}" href=""></a>
-  <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
-</ul>

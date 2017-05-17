@@ -1,22 +1,25 @@
 <div class="container">
-<h2>dogs near you</h2>
+  <h2>Dogs near you</h2>
   <div class="dogList">
     <div class="row">
-      <input type="text" class="search" ng-model="vm.q" placeholder="Search by Breed...">
-      <div class="l-box">
-        <input type="checkbox" id="size" ng-model="vm.useSsize">
-        <label for="size">Size</label>
-        <input type="range" ng-model="vm.size" min="1" max="3" ng-disabled="!vm.useSize">
-      </div>
+      <h3>Dog Breed</h3>
+      <input type="search" class="search" ng-model="vm.q" placeholder="Search by Breed...">
+      <h3>Dog Size</h3>
+      <label for="">Small</label>
+      <input name="size" type="checkbox" ng-model="vm.small" value="small">
+      <label for="">Medium</label>
+      <input name="size" type="checkbox" ng-model="vm.medium" value="medium">
+      <label for="">Large</label>
+      <input name="size" type="checkbox" ng-model="vm.large" value="large">
 
-        <div ng-repeat="dog in vm.dogs | filter: { breed: vm.q }" index="$index">
-          <div class="col-md-4 col-s-6 imageBox">
+      <div ng-repeat="dog in vm.filtered">
+        <div class="col-md-4 col-s-6 imageBox">
           <img class="dogHomeImage" ng-src="{{dog.image}}" ui-sref="dogsShow({ id: dog._id })">
           <h4><a class="dogHomeName" ui-sref="dogsShow({ id: dog._id })">{{ dog.name }}</a></h4>
           <div class="middle">
             <div class="dogHomeDesc"> {{ dog.description }}</div>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>

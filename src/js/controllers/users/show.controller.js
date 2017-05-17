@@ -22,6 +22,8 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
     });
   }
 
+  
+
   vm.userOpenModal = userOpenModal;
 
 }

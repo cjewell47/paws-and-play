@@ -1,34 +1,38 @@
-<h2> edit user profile</h2>
+<div class="container">
+  <div class="userEditPage">
+    <h1> Update your profile</h1>
+      <form name="vm.editUserForm" ng-submit="vm.update()" method="put" novalidate>
+        <div class="form-group">
+        <label for="name">Name</label><br>
+          <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="{{vm.username}}" required>
+        </div>
 
-<div class="showPage">
-  <form name="vm.editUserForm" ng-submit="vm.update()" method="put" novalidate>
-    <div class="form-group">
-      <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="{{vm.username}}" required>
-    </div>
+        <div class="ng-message-error" ng-messages="vm.editUserForm.username.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.username.$touched)">
+          <p ng-message="required">A username is required!</p>
+        </div>
 
-    <div class="ng-message-error" ng-messages="vm.editUserForm.username.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.username.$touched)">
-      <p ng-message="required">A username is required!</p>
-    </div>
+        <div class="form-group">
+          <label for="name">Image</label><br>
+          <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="Image" required>
+        </div>
 
-    <div class="form-group">
-      <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="Image" required>
-    </div>
+        <div class="ng-message-error" ng-messages="vm.editUserForm.image.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.image.$touched)">
+          <p ng-message="required">An image is required!</p>
+        </div>
 
-    <div class="ng-message-error" ng-messages="vm.editUserForm.image.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.image.$touched)">
-      <p ng-message="required">An image is required!</p>
-    </div>
+        <div class="form-group">
+          <label for="name">Email</label><br>
+          <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email" required>
+        </div>
 
-    <div class="form-group">
-      <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email" required>
-    </div>
+        <div class="ng-message-error" ng-messages="vm.editUserForm.email.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.email.$touched)">
+          <p ng-message="required">An email address is required!</p>
+        </div>
 
-    <div class="ng-message-error" ng-messages="vm.editUserForm.email.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.email.$touched)">
-      <p ng-message="required">An email address is required!</p>
-    </div>
+        <button type="button" name="back" class="btn btn-info" ui-sref="usersShow({ id: vm.user._id })">Back</button>
 
-    <button type="button" name="back" class="btn btn-info" ui-sref="usersShow({ id: vm.user._id })">Back</button>
+        <input class="btn btn-primary" type="submit" value="Update" />
 
-    <input class="btn btn-primary" type="submit" value="Update" />
-
-  </form>
+      </form>
+  </div>
 </div>

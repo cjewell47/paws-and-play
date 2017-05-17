@@ -61,7 +61,13 @@ User
           breed: 'labrador',
           image: 'https://vetstreet.brightspotcdn.com/dims4/default/03f7acf/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F36%2F4fccb0a10611e087a80050568d634f%2Ffile%2FLabrador-4-645mk062111.jpg',
           description: 'This dog is really cool.',
-          size: 'medium'
+          size: 'medium',
+          walk: {
+            available: ['2017-07-07', '2017-07-08'],
+            pending: [],
+            accepted: []
+          }
+
         }, {
           owner: users[1]._id,
           name: 'hero',
