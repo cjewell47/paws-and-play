@@ -2,8 +2,8 @@ angular
 .module('DogApp')
 .controller('DogsEditCtrl', DogsEditCtrl);
 
-DogsEditCtrl.$inject = ['$stateParams', '$state', 'Dog', '$location', 'TokenService', '$uibModal', 'Walk'];
-function DogsEditCtrl($stateParams, $state, Dog, $location, TokenService, $uibModal, Walk) {
+DogsEditCtrl.$inject = ['$stateParams', '$state', 'Dog', '$location', 'TokenService', '$uibModal'];
+function DogsEditCtrl($stateParams, $state, Dog, $location, TokenService, $uibModal) {
   const vm = this;
 
   vm.dog = Dog.get($stateParams);
@@ -43,17 +43,17 @@ function DogsEditCtrl($stateParams, $state, Dog, $location, TokenService, $uibMo
   vm.dogOpenModal = dogOpenModal;
 
 
-  function walkCreate(){
-    Walk
-      .save(vm.walk)
-      .$promise
-      .then(walk => {
-        console.log(walk);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-
-  vm.createWalk = walkCreate;
+  // function walkCreate(){
+  //   Walk
+  //     .save(vm.walk)
+  //     .$promise
+  //     .then(walk => {
+  //       console.log(walk);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
+  //
+  // vm.createWalk = walkCreate;
 }

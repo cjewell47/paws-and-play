@@ -63,7 +63,7 @@ User
           description: 'This dog is really cool.',
           size: 'medium',
           walk: {
-            available: ['2017-07-07', '2017-07-08'],
+            available: ['2017-07-08'],
             pending: [],
             accepted: []
           }
@@ -74,14 +74,24 @@ User
           breed: 'chihuahua',
           image: 'http://www.yourpurebredpuppy.com/dogbreeds/photos-CD/chihuahuasf1.jpg',
           description: 'This dog is an absolute bastard.',
-          size: 'small'
+          size: 'small',
+          walk: {
+            available: ['2017-07-07', '2017-07-08'],
+            pending: [],
+            accepted: []
+          }
         }, {
           owner: users[3]._id,
           name: 'zero',
           breed: 'schnauzer',
           image: 'https://s3-eu-west-1.amazonaws.com/w3.cdn.gpd/gb.pedigree.56/large_5878dd85-86d0-4aa6-b3c8-0dd8f3f76ed9.jpg',
           description: 'This dog looks weird.',
-          size: 'small'
+          size: 'small',
+          walk: {
+            available: ['2017-07-07', '2017-07-08'],
+            pending: [],
+            accepted: []
+          }
         }
       ])
       .then(dogs => {
