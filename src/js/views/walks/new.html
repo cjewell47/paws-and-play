@@ -1,11 +1,11 @@
 <h3 class="modal-title">Add a walk!</h3>
 <div class="modal-body">
-  <form class="" action="" method="put" >
+  <form ng-submit="vm.create()" >
     <div class="form-group">
       <label for="walk">Availablity</label><br>
       <input type="date" id="walk" name="date" ng-model="vm.walk.available" class="form-control" required>
     </div>
-    <input  type="submit" class="btn btn-warning" ng-submit="vm.walkCreate()" value="Add Walk">
+    <input  type="submit" class="btn btn-warning" value="Add Walk" >
   </form></div>
   <div >
     <button class="btn btn-primary" ui-sref="usersShow({ id: main.user._id})">back</button>

@@ -15,7 +15,7 @@ function WalkSelectCtrl(dog, $uibModalInstance) {
 
   function walkSelect() {
     Dog
-      .update()
+      .update();
   }
 
   function setActive(date) {
