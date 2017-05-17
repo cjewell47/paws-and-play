@@ -1,6 +1,6 @@
 <div class="container">
   <div class="dogEditPage">
-    <h1>Update {{ vm.dog.name }}'s details:</h1>
+    <h1>Update your dog's details:</h1>
     <form name="vm.editDogForm" ng-submit="vm.update()" novalidate>
       <div class="form-group">
         <label for="name">Name</label><br>
@@ -20,10 +20,22 @@
         <p ng-message="required">Breed is required!</p>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="size">Size</label><br>
         <input class="form-control" type="text" id="size" name="size" ng-model="vm.dog.size" required>
       </div>
+
+      <div class="ng-message-error" ng-messages="vm.editDogForm.size.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.size.$touched)">
+        <p ng-message="required">Size is required!</p>
+      </div> -->
+
+      <div class="form-group">
+        <label for="size">Size</label><br>
+        <select id="size"  name="size" ng-model="vm.dog.size" class="form-control" required>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>  </div>
 
       <div class="ng-message-error" ng-messages="vm.editDogForm.size.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.size.$touched)">
         <p ng-message="required">Size is required!</p>
@@ -51,7 +63,7 @@
     </div>
   </div>
 
-  <div class="ng-message-error" ng-messages="vm.editDogForm.name.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.name.$touched)">
+  <!-- <div class="ng-message-error" ng-messages="vm.editDogForm.name.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.name.$touched)">
     <p ng-message="required">A name is required!</p>
   </div>
 
@@ -96,4 +108,4 @@
 <button type="button" class="btn btn-danger" ng-click="vm.dogOpenModal()">Delete</button>
 
 
-</div>
+</div> -->

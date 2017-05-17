@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1>Your profile</h1>
-          <a ui-sref="#"><img ng-src="{{ vm.user.image }}"></a>
+          <a ui-sref="#"><img class="ownerPicture" ng-src="{{ vm.user.image }}"></a>
         </div>
         <div class="col-md-6 userInfoBlock">
           <div class="userShowInfo">
@@ -24,7 +24,7 @@
           <div class="col-md-6">
             <h2>Your dogs</h2>
             <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
-                <a ui-sref="#"><img ng-src="{{ dog.image }}"></a>
+                <a ui-sref="#"><img class="dogPicture" ng-src="{{ dog.image }}"></a>
             </ul>
           </div>
             <div class="col-md-6 userInfoBlock">
