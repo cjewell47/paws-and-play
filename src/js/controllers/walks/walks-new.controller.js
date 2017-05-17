@@ -10,11 +10,10 @@ function WalkNewCtrl (Dog, $state, TokenService, $stateParams) {
   function walkCreate(){
     console.log(vm.walk);
     Dog
-    .update($stateParams, vm.walk)
+    .addWalk($stateParams, vm.walk)
     .$promise
-    .then(() => {
-      // console.log(vm.walk);
-      // $state.go('usersShow',{ id: TokenService.decodeToken().id });
+    .then(dog => {
+      console.log(dog);
     })
     .catch(err => {
       console.log(err);

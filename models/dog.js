@@ -8,7 +8,7 @@ const dogSchema = new mongoose.Schema({
   description: { type: String },
   image: { type: String, required: true },
   size: {type: String },
-  walk: [{
+  walks: [{
     date: Date,
     requests: [{
       walker: { type: mongoose.Schema.ObjectId, ref: 'User' }

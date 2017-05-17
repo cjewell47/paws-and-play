@@ -58,9 +58,10 @@ function deleteRoute(req, res, next) {
 function walkUpdate(req, res) {
   Dog
   .findById(req.params.id)
+  .exec()
   .then(dog => {
-    console.log(dog);
-  
+    dog.walks.push(req.body);
+    console.log('DOGGGG', dog);
   });
 }
 
