@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1>Your profile</h1>
-          <a ui-sref="#"><img class="ownerPicture" ng-src="{{ vm.user.image }}"></a>
+          <a ui-sref="#"><img ng-src="{{ vm.user.image }}"></a>
         </div>
         <div class="col-md-6 userInfoBlock">
           <div class="userShowInfo">
@@ -30,19 +30,15 @@
         <div class="col-md-6 userInfoBlock">
           <div class="userShowInfo">
             <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
-<<<<<<< HEAD
-                <a ui-sref="#"><img class="dogPicture" ng-src="{{ dog.image }}"></a>
-=======
               <h2 class="heading"><li>{{ dog.name }}</li></h2>
               <p>Breed: {{ dog.breed }}</p>
               <p>Size: {{ dog.size }}</p>
               <p>Description: {{ dog.description }}</p>
-              <p>Availability:`` </p>
+              <p>Availability:{{ dog.walk.available }} </p>
               <div class="userUpdateButton">
                 <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
-                <!-- <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button> -->
+                <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button>
               </div>
->>>>>>> development
             </ul>
           </div>
         </div>
