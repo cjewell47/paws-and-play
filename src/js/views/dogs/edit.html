@@ -23,7 +23,11 @@
 
       <div class="form-group">
         <label for="size">Size</label><br>
-        <input class="form-control" type="text" id="size" name="size" ng-model="vm.dog.size" required>
+        <select id="size"  name="size" ng-model="vm.dog.size" class="form-control" required>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
       </div>
 
       <div class="ng-message-error" ng-messages="vm.editDogForm.size.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.size.$touched)">
