@@ -8,19 +8,32 @@
   }
 }
 
-
-.doggo img {
-  width: 150px;
-  height: 150px;
-  margin: 20px;
-  border-radius: 50%;
-  padding-left: 0px;
-  float: left;
-  clear: both;
-  background-color: green;
-}
-
 .doggo {
   background-color: rgba(254, 191, 0, .4);
   border-radius: 10px;
+  img {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    border-radius: 50%;
+    padding-left: 0px;
+    float: left;
+    clear: both;
+    background-color: green;
+  }
+}
+
+
+.step {
+  padding-top: 45px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 50%;
+    padding-left: 0px;
+    float: left;
+    clear: both;
+  }
 }

@@ -13,12 +13,28 @@ html {
 }
 
 body {
-  background-color: #AED8E8;
+  background-color: rgba(174, 216, 232, 1);
+  // background-image: url("/images/back.png");
   font-family: 'Josefin Sans', sans-serif;
   position: relative;
   min-height: 100%;
   padding-bottom: 350px;
 }
+
+.background {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/images/back2.png");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+
 
 .navbar {
   font-size: 17px;
