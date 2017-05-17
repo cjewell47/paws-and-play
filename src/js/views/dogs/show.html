@@ -16,6 +16,7 @@
             <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
             <p class="showSize"><strong>Size:</strong> {{ vm.dog.size }}</p>
             <p class="showOwner"><strong>Owner:</strong> {{ vm.dog.owner.username }}</p>
+            <p>Available dates: <span ng-repeat="walk in vm.dog.walks">{{ walk.date}}<br></span></p>
             <p class="showLocation"><strong>Location:</strong></p>
             <button class="showOwner" ng-click="vm.walkOpenModal()">Available Dates</button>
 
