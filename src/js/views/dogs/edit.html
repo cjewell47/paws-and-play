@@ -2,6 +2,7 @@
   <div class="dogEditPage">
     <h1>Update {{ vm.dog.name }}'s details:</h1>
     <form name="vm.editDogForm" ng-submit="vm.update()" novalidate>
+
       <div class="form-group">
         <label for="name">Name</label><br>
         <input class="form-control" type="text" id="name" name="name" ng-model="vm.dog.name" required>
@@ -46,7 +47,9 @@
       <div class="dogEditButtons">
         <button type="button" name="back" class="btn btn-info backButton" ui-sref="usersShow({ id: main.user._id})">Back</button>
         <input type="submit" class="btn btn-warning saveButton" value="Save">
+      </div>
       </form>
+
       <button type="button" class="btn btn-danger deleteButton" ng-click="vm.dogOpenModal()">Delete</button>
     </div>
   </div>
