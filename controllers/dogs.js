@@ -60,19 +60,20 @@ function walkUpdate(req, res) {
   .findById(req.params.id)
   .then(dog => {
     console.log(dog);
+  
   });
 }
 
-function selectWalk(req, res) {
-  Dog
-  .findById(req.params.id)
-  .then((dog) => {
-    // if(!dog) return res.notFound();
-    // dog.walk.pending = req.body.available;
-
-  }
-);
-}
+// function selectWalk(req, res) {
+//   Dog
+//   .findById(req.params.id)
+//   .then((dog) => {
+//     // if(!dog) return res.notFound();
+//     // dog.walk.pending = req.body.available;
+//
+//   }
+// );
+// }
 
 module.exports = {
   index: indexRoute,

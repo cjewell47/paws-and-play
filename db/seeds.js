@@ -62,11 +62,15 @@ User
           image: 'https://vetstreet.brightspotcdn.com/dims4/default/03f7acf/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F36%2F4fccb0a10611e087a80050568d634f%2Ffile%2FLabrador-4-645mk062111.jpg',
           description: 'This dog is really cool.',
           size: 'medium',
-          walk: {
-            available: ['2017-07-08'],
-            pending: [],
-            accepted: []
-          }
+          walk: [{
+            date: '2017-07-11',
+            requests: [],
+            accepted: {}
+          }, {
+            date: '2017-06-01',
+            requests: [],
+            accepted: {}
+          }]
 
         }, {
           owner: users[1]._id,
@@ -75,11 +79,15 @@ User
           image: 'http://www.yourpurebredpuppy.com/dogbreeds/photos-CD/chihuahuasf1.jpg',
           description: 'This dog is an absolute bastard.',
           size: 'small',
-          walk: {
-            available: ['2017-07-07', '2017-07-08'],
-            pending: [],
-            accepted: []
-          }
+          walk: [{
+            date: '2017-05-28',
+            requests: [],
+            accepted: {}
+          }, {
+            date: '2017-05-29',
+            requests: [],
+            accepted: {}
+          }]
         }, {
           owner: users[3]._id,
           name: 'zero',
@@ -87,11 +95,15 @@ User
           image: 'https://s3-eu-west-1.amazonaws.com/w3.cdn.gpd/gb.pedigree.56/large_5878dd85-86d0-4aa6-b3c8-0dd8f3f76ed9.jpg',
           description: 'This dog looks weird.',
           size: 'small',
-          walk: {
-            available: ['2017-07-07', '2017-07-08'],
-            pending: [],
-            accepted: []
-          }
+          walk: [{
+            date: '2017-07-07',
+            requests: [],
+            accepted: {}
+          }, {
+            date: '2017-07-08',
+            requests: [],
+            accepted: {}
+          }]
         }
       ])
       .then(dogs => {
