@@ -34,7 +34,7 @@
               <p>Breed: {{ dog.breed }}</p>
               <p>Size: {{ dog.size }}</p>
               <p>Description: {{ dog.description }}</p>
-              <p>Availability: </p>
+              <p>Availability:{{ dog.walk.available }} </p>
               <div class="userUpdateButton">
                 <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
                 <!-- <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button> -->
