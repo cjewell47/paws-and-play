@@ -37,7 +37,7 @@ function updateRoute(req, res, next) {
       for(const field in req.body) {
         dog[field] = req.body[field];
       }
-
+      console.log(dog);
       return dog.save();
     })
     .then((dog) => res.json(dog))
@@ -55,10 +55,19 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function walkUpdate(req, res) {
+  Dog
+  .findById(req.params.id)
+  .then(dog => {
+    console.log(dog);
+  });
+}
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  walkUpdate: walkUpdate
 };
