@@ -1,7 +1,8 @@
 const mongoose  = require('mongoose');
 
 const walkSchema = new mongoose.Schema({
-  owner: { type: mongoose.Schema.ObjectId, ref: 'Dog' },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  dog: { type: mongoose.Schema.ObjectId, ref: 'Dog' },
   available: [
     {
       type: Date
@@ -9,12 +10,14 @@ const walkSchema = new mongoose.Schema({
   ],
   pending: [
     {
-      type: Date
+      date: { type: Date },
+      walker: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
   ],
   accepted: [
     {
-      type: Date
+      date: { type: Date },
+      walker: { type: mongoose.Schema.ObjectId, ref: 'User' }
     }
   ]
 });

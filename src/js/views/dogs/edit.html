@@ -43,10 +43,15 @@
     <label for="description">Description</label><br>
     <textarea type="text" id="description" name="description" ng-model="vm.dog.description"></textarea>
   </div>
+
   <button type="button" name="back" class="btn btn-info" ui-sref="usersShow({ id: main.user._id})">Back</button>
 
   <input type="submit" class="btn btn-warning"  value="Save">
 </form>
+
+
 <button type="button" class="btn btn-danger" ng-click="vm.dogOpenModal()">Delete</button>
+
+
 
 </div>
