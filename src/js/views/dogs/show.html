@@ -1,13 +1,16 @@
 <div class="container">
-  <div class="FormPage">
+  <div class="dogShowPage">
     <div class="dogShowMain">
       <div class="row">
         <div class="col-md-6">
           <img ng-src="{{ vm.dog.image }}">
         </div>
-        <div class="col-md-6">
-      <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
 
+        <div class="dogShowButton">
+          <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
+        </div>
+
+        <div class="col-md-6">
           <div class="dogShowInfo">
             <h2 class="showName">{{ vm.dog.name }}</h2>
             <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
@@ -36,14 +39,14 @@
             <p>Weekends</p>
             <p>Holidays</p>
           </div>
-          <div class="showButton">
-          <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Return to Dog Index</button>
+          <div class="dogShowButton">
+            <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Return to Dog Index</button>
           </div>
         </div>
       </div>
       <!-- <div class="col-md-12">
-        <button type="button" name="back" class="btn btn-info showBack" ui-sref="dogsIndex">Return to Dog Index</button>
-      </div> -->
-    </div>
+      <button type="button" name="back" class="btn btn-info showBack" ui-sref="dogsIndex">Return to Dog Index</button>
+    </div> -->
   </div>
+</div>
 </div>
