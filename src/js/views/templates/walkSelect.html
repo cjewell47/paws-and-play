@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h3 class="modal-title">Make a walk request for {{ vm.dog.name }}</h3>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="walks">Available dates</label><br>
+    <select id="size"  name="walks" ng-model="vm.dog.walk.available" class="form-control" required>
+      <option ng-repeat="date in vm.dog.walk.available">{{ date }}</option>
+    </select>
+    <input type="submit" name="walks" value="Submit request">
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="vm.close()">Cancel</button>
+</div>
