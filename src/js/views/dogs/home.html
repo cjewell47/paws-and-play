@@ -6,11 +6,11 @@
       <input type="search" class="search" ng-model="vm.q" placeholder="Search by Breed...">
       <h3>Dog Size</h3>
       <label for="">Small</label>
-      <input type="checkbox" ng-model="vm.small" value="small">
+      <input name="size" type="checkbox" ng-model="vm.small" value="small">
       <label for="">Medium</label>
-      <input type="checkbox" ng-model="vm.medium" value="medium">
+      <input name="size" type="checkbox" ng-model="vm.medium" value="medium">
       <label for="">Large</label>
-      <input type="checkbox" ng-model="vm.large" value="large">
+      <input name="size" type="checkbox" ng-model="vm.large" value="large">
 
       <div ng-repeat="dog in vm.filtered">
         <div class="col-md-4 col-s-6 imageBox">
