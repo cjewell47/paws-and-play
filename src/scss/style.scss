@@ -15,12 +15,28 @@ html {
 }
 
 body {
-  background-color: #AED8E8;
+  background-color: rgba(174, 216, 232, 1);
+  // background-image: url("/images/back.png");
   font-family: 'Josefin Sans', sans-serif;
   position: relative;
   min-height: 100%;
   padding-bottom: 350px;
 }
+
+.background {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/images/back2.png");
+  background-attachment: fixed;
+  background-repeat: repeat;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+
 
 .navbar {
   font-size: 17px;
@@ -35,10 +51,11 @@ body {
     margin: 0;
     padding: 0;
    img {
-    width: 145px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     display: inline;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-left: 15px;
   }
 }
 
@@ -74,12 +91,6 @@ h4{
 }
 
 
-.banner img {
-  width: 80%;
-  height: 500px;
-  margin: 50px;
-}
-
 footer {
   font-size: 18px;
   background-color: #26657A;
@@ -106,5 +117,21 @@ footer {
     float: right;
     line-height: 70px;
     color: #90BFCF;
+  }
+}
+
+
+.social {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  img {
+      width: 27px;
+      height: 27px;
+      margin-right: 13px;
+      filter: invert(100%);
+
   }
 }
