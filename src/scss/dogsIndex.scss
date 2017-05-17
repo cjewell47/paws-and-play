@@ -16,7 +16,7 @@
   width: 250px;
   margin: auto;
   background-color: #518394;
-  border: 1px solid silver;
+  border: 1px solid #518394;
 
   &:hover {
     background-color: sliver;
@@ -55,10 +55,20 @@
   -ms-transform: translate(-50%, -50%)
 }
 
-.imageBox:hover .imageBox {
-  opacity: 0.3;
+
+.dogHomeImage:hover  {
+  opacity: 0.6;
 }
 
 .imageBox:hover .middle {
   opacity: 1;
+  font-weight: bold;
+  font-size: 14px;
 }
+// .imageBox:hover .imageBox {
+//   opacity: 0.3;
+// }
+
+// .imageBox:hover .middle {
+//   opacity: 1;
+// }
