@@ -63,7 +63,7 @@ User
           description: 'This dog is really cool.',
           size: 'medium',
           walk: {
-            available: ['2017-07-07', '2017-07-08'],
+            available: ['2017-07-08'],
             pending: [],
             accepted: []
           }

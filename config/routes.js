@@ -4,7 +4,7 @@ const router   = express.Router();
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 const dogs            = require('../controllers/dogs');
-const walks            = require('../controllers/walks');
+// const walks            = require('../controllers/walks');
 
 
 router.route('/register')

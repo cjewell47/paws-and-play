@@ -2,9 +2,9 @@ angular
 .module('DogApp')
 .controller('DogShowCtrl', DogShowCtrl);
 
-DogShowCtrl.$inject = ['Dog', '$stateParams', '$state'];
+DogShowCtrl.$inject = ['Dog', '$stateParams', '$state', '$uibModal'];
 
-function DogShowCtrl (Dog, $stateParams, $state) {
+function DogShowCtrl (Dog, $stateParams, $state, $uibModal) {
   const vm = this;
   Dog
   .get($stateParams)
@@ -12,4 +12,19 @@ function DogShowCtrl (Dog, $stateParams, $state) {
   .then(data => {
     vm.dog = data;
   });
+
+  function walkOpenModal() {
+    $uibModal.open({
+      templateUrl: 'js/views/templates/walkSelect.html',
+      controller: 'WalkSelectCtrl as vm',
+      resolve: {
+        dog: () => {
+          return vm.dog;
+        }
+      }
+    });
+  }
+
+  vm.walkOpenModal = walkOpenModal;
+
 }
