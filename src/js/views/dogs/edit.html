@@ -50,4 +50,50 @@
       <button type="button" class="btn btn-danger deleteButton" ng-click="vm.dogOpenModal()">Delete</button>
     </div>
   </div>
+
+  <div class="ng-message-error" ng-messages="vm.editDogForm.name.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.name.$touched)">
+    <p ng-message="required">A name is required!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="breed">Breed</label><br>
+    <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" required>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.editDogForm.breed.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.breed.$touched)">
+    <p ng-message="required">Breed is required!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="size">Size</label><br>
+    <select id="size"  name="size" ng-model="vm.dog.size" class="form-control" required>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>  </div>
+
+  <div class="ng-message-error" ng-messages="vm.editDogForm.size.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.size.$touched)">
+    <p ng-message="required">Size is required!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image</label><br>
+    <input type="text" id="image" name="image" ng-model="vm.dog.image" required>
+  </div>
+
+  <div class="ng-message-error" ng-messages="vm.editDogForm.image.$error" ng-show="(vm.editDogForm.$submitted || vm.editDogForm.image.$touched)">
+    <p ng-message="required">An image is required!</p>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label><br>
+    <textarea type="text" id="description" name="description" ng-model="vm.dog.description"></textarea>
+  </div>
+  <button type="button" name="back" class="btn btn-info" ui-sref="usersShow({ id: main.user._id})">Back</button>
+
+  <input type="submit" class="btn btn-warning"  value="Save">
+</form>
+<button type="button" class="btn btn-danger" ng-click="vm.dogOpenModal()">Delete</button>
+
+
 </div>

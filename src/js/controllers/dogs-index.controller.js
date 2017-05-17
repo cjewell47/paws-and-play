@@ -4,26 +4,31 @@ angular
 
 DogIndexCtrl.$inject = ['Dog', 'filterFilter', '$scope'];
 function DogIndexCtrl (Dog, filterFilter, $scope) {
-  const vm = this;
-  vm.dogs = Dog.query();
-  // dogsIndex();
+  const vm      = this;
 
-  // function dogsIndex() {
-    // vm.dogs = Dog.query();
+  Dog
+    .query()
+    .$promise
+    .then(dogs => {
+      vm.dogs = dogs;
+      filterDogs();
+    });
 
   function filterDogs() {
-    // const params = { name: vm.q };
-    // if(vm.useBreed) params.breed = vm.breed;
-    // if(vm.useSize) params.size = vm.size;
+    const params = { breed: vm.q };
+    if (vm.small) params.size  = 'small';
+    if (vm.medium) params.size = 'medium';
+    if (vm.large) params.size  = 'large';
 
-    vm.filtered = filterFilter(vm.dogs, vm.q);
+    vm.filtered = filterFilter(vm.dogs, params);
   }
 
-  $scope.$watch(() => vm.q, filterDogs);
-  // $scope.$watchGroup([
-  //   () => vm.q,
-  //   () => vm.useSize
-  // ], filterDogs);
+  $scope.$watchGroup([
+    () => vm.small,
+    () => vm.medium,
+    () => vm.large,
+    () => vm.q
+  ], filterDogs);
+
   vm.filterDogs = filterDogs;
-  // }
 }
