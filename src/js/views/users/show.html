@@ -19,20 +19,18 @@
           </div>
         </div>
       </div>
-  
+
       <div class="row">
         <div class="col-md-6">
           <h2>Your dogs</h2>
           <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
-            <a ui-sref="#"><img ng-src="{{ dog.image }}"></a>
+            <a ui-sref="#"><img class="dogPicture" ng-src="{{ dog.image }}"></a>
           </ul>
         </div>
         <div class="col-md-6 userInfoBlock">
           <div class="userShowInfo">
             <ul style="list-style:none" ng-repeat="dog in vm.user.dogs">
-<<<<<<< HEAD
-                <a ui-sref="#"><img class="dogPicture" ng-src="{{ dog.image }}"></a>
-=======
+
               <h2 class="heading"><li>{{ dog.name }}</li></h2>
               <p>Breed: {{ dog.breed }}</p>
               <p>Size: {{ dog.size }}</p>
@@ -42,7 +40,7 @@
                 <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
                 <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button>
               </div>
->>>>>>> development
+
             </ul>
           </div>
         </div>
