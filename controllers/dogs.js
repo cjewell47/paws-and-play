@@ -55,6 +55,17 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function selectWalk(req, res) {
+  Dog
+    .findById(req.params.id)
+    .then((dog) => {
+      // if(!dog) return res.notFound();
+      // dog.walk.pending = req.body.available;
+
+    }
+  );
+}
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
