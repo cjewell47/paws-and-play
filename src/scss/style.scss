@@ -186,3 +186,13 @@ footer {
   background-color: silver;
   border-color: silver;
 }
+
+.navhover {
+
+  &:hover {
+    background-color: silver;
+  }
+}
+.none{
+    text-decoration: none !important;
+}
