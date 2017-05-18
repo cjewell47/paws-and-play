@@ -68,6 +68,20 @@ function walkUpdate(req, res, next) {
   .catch(next);
 }
 
+function walkSelect(req, res, next) {
+  console.log('BACK END WALK REQUEST', req);
+  Dog
+  .findById(req.params.id)
+  .exec()
+  .then(dog => {
+
+    console.log(dog);
+    return dog.save();
+  })
+  .then((dog) => res.status(201).json(dog))
+  .catch(next);
+}
+
 // function selectWalk(req, res) {
 //   Dog
 //   .findById(req.params.id)
@@ -85,5 +99,6 @@ module.exports = {
   show: showRoute,
   update: updateRoute,
   delete: deleteRoute,
-  walkUpdate: walkUpdate
+  walkUpdate: walkUpdate,
+  walkSelect: walkSelect
 };
