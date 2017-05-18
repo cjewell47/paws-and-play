@@ -59,9 +59,10 @@
 
           </ul>
         </div> -->
-        <div class="col-md-12 userDogInfoBlock" ng-repeat="dog in vm.user.dogs">
+        <div class="userdog">
+        <div class="col-md-12 userDogInfoBlock container   addDog  " ng-repeat="dog in vm.user.dogs">
           <div class="userShowInfo">
-            <ul style="list-style:none">
+            <ul style="list-style:none" class="center" >
               <h2 class="heading"><li>{{ dog.name }}</li></h2>
               <img class="dogPicture" ng-src="{{ dog.image }}">
               <p>Breed: {{ dog.breed }}</p>
@@ -83,6 +84,7 @@
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

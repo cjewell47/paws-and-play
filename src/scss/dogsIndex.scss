@@ -9,6 +9,11 @@
   transition: .5s ease;
   backface-visibility: hidden;
 }
+.listBlock{
+  background: rgba(135, 203, 109, .8);
+  border-radius: 15px;
+  border: 1px solid silver;
+}
 
 .dogHomeName {
   display: block;
@@ -34,7 +39,7 @@
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(254, 191, 0, .5);
 }
 .dogHomeSize {
   max-width: 80%;
@@ -43,7 +48,7 @@
   border: 2px solid silver;
   border-radius: 15px;
   padding-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(254, 191, 0, .5);
 }
 .sizeText {
   font-size: 18px;
