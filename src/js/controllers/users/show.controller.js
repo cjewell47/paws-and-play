@@ -21,10 +21,25 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
     });
   }
 
-  function confirmWalk(dog, request) {
-    vm.dog = dog;
-    vm.request = request;
-    console.log('DogsDogsDogs', vm.dog, vm.request);
+  function confirmWalk(dog, request, walk) {
+    var info = {
+      dog: dog,
+      walker: request,
+      walk: walk
+    };
+    console.log(dog);
+    console.log(request);
+    console.log('walk*****', walk);
+    User
+    .confirm($stateParams, info)
+
+    .$promise
+    .then(dog => {
+      console.log('DogDogDog', dog);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
   vm.userOpenModal = userOpenModal;

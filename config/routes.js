@@ -18,6 +18,8 @@ router.route('/users/:id')
 .get(users.show)
 .put(users.update)
 .delete(users.delete);
+router.route('/users/:id/confirm')
+.put(users.walkConfirm);
 
 router.route('/dogs')
 .get(dogs.index)
@@ -30,6 +32,8 @@ router.route('/dogs/:id/walks')
 .put(dogs.walkUpdate);
 router.route('/dogs/:id/walks/select')
 .put(dogs.walkSelect);
+// router.route('/dogs/:id/walks/confirm')
+// .put(dogs.walkConfirm);
 
 
 router.route('/walks')

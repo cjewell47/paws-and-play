@@ -12,6 +12,11 @@
             <p>Email: {{ vm.user.email }}</p>
             <p>Mobile:{{ vm.user.mobile }} </p>
             <p>Postcode:{{ vm.user.location }} </p>
+            <p>Upcoming walks: <ul>
+              <li ng-repeat="message in vm.user.messages">
+                {{ message }}
+              </li>
+            </ul></p>
           </div>
           <div class="userUpdateButtons">
             <button type="button" name="back" class="btn btn-warning" ui-sref="usersEdit({ id: main.user._id})">Edit</button>
@@ -77,7 +82,7 @@
               <p>{{ dog.name }}'s Requests</p>
               <ul>
                 <li ng-repeat="walk in dog.walks">{{ walk.date | date : format : mediumDate }}<br><ul>
-                  <li ng-repeat="request in walk.requests"><button class="btn btn-warning" ng-click="vm.confirmWalk(dog, request)">Confirm {{ request.walker.username }}</button></li>
+                  <li ng-repeat="request in walk.requests"><button class="btn btn-warning" ng-click="vm.confirmWalk(dog, request, walk)">Confirm {{ request.walker.username }}</button></li>
                 </ul></li>
               </ul>
             </ul>
