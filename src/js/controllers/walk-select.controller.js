@@ -18,7 +18,7 @@ function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserSe
     console.log('user--------', vm.user._id);
     console.log('walk-------', vm.select);
     Dog
-    .selectWalk($stateParams, vm.select, vm.user._id)
+    .selectWalk($stateParams, { date: vm.select })
     .$promise
     .then(dog => {
       console.log('I HAVE MADE A WALK REQUEST', dog);

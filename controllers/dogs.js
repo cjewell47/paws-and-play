@@ -69,16 +69,26 @@ function walkUpdate(req, res, next) {
 }
 
 function walkSelect(req, res, next) {
-  console.log('BACK END WALK REQUEST', req);
+  // console.log('BACK END WALK REQUEST', req.body);
+  console.log('*** REQ DATE***', typeof req.body.date);
   Dog
   .findById(req.params.id)
   .exec()
   .then(dog => {
-
-    console.log(dog);
+    for (let i = 0; i < dog.walks.length; i++){
+      const date1 = new Date(dog.walks[i].date);
+      const date2 = new Date(req.body.date);
+      if (date1.toString() === date2.toString()) {
+        const request = { walker: req.user._id };
+        dog.walks[i].requests.addToSet(request);
+      }
+    }
     return dog.save();
   })
-  .then((dog) => res.status(201).json(dog))
+  .then((dog) => {
+    console.log('-------dog', dog);
+    return res.status(201).json(dog);
+  })
   .catch(next);
 }
 

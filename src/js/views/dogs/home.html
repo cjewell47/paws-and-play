@@ -31,7 +31,8 @@
           <img class="dogHomeImage" ng-src="{{dog.image}}" ui-sref="dogsShow({ id: dog._id })">
           <h4><a class="dogHomeName" ui-sref="dogsShow({ id: dog._id })">{{ dog.name }}</a></h4>
           <div class="middle">
-            <div class="dogHomeDesc"> {{ dog.description }}</div>
+            <div class="dogHomeDesc hi" ui-sref="dogsShow({ id: dog._id })">{{ dog.description }} </div>
+
           </div>
         </div>
       </div>

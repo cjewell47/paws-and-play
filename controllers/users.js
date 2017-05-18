@@ -25,10 +25,13 @@ function usersShow(req, res) {
 
     Dog
       .find({ owner: user._id })
+      .populate('walks.requests.walker')
       .exec()
+      // .populate(walker)
       .then(dogs => {
         user.dogs = dogs;
         return res.status(200).json(user);
+
       });
   })
   .catch(() => res.status(500).json({ message: 'Something went wrong.' }));

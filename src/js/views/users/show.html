@@ -73,6 +73,12 @@
                 <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
                 <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button>
               </div>
+              <p>{{ dog.name }}'s Requests</p>
+              <ul>
+                <li ng-repeat="walk in dog.walks">{{ walk.date | date : format : mediumDate }}<br><ul>
+                  <li ng-repeat="request in walk.requests">{{ request.walker.username }}</li>
+                </ul></li>
+              </ul>
             </ul>
           </div>
         </div>
