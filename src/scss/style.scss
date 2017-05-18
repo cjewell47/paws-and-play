@@ -211,3 +211,7 @@ footer {
   border-color: silver;
   transition: .5s ease;
 }
+textarea{
+   resize:vertical;
+   max-height: 200px;
+}
