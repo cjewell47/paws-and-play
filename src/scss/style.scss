@@ -11,6 +11,7 @@
 @import "userShow";
 @import "userEdit";
 @import "newWalk";
+@import "buttons";
 
 html {
   height: 100%
@@ -160,47 +161,11 @@ footer {
   }
 }
 
-.btn-primary {
-  background-color: #005B96;
-  border-color: #005B96;
-  color: #fff;
-}
-.btn-primary:hover {
-  background-color: silver;
-  border-color: silver;
-}
-.btn-warning {
-  background-color: #518394;
-  border-color: #518394;
-}
-.btn-warning:hover {
-  background-color: silver;
-  border-color: silver;
-}
-.btn-danger {
-  background-color: #26657a;
-  border-color: #26657a;
-}
-.btn-danger:hover {
-  background-color: silver;
-  border-color: silver;
-}
-
 .navhover {
-
   &:hover {
     background-color: silver;
   }
 }
 .none{
     text-decoration: none !important;
-}
-.btn-info {
-  background-color: #518394;
-  border-color: #518394;
-}
-
-.btn-info:hover {
-  background-color: silver;
-  border-color: silver;
 }

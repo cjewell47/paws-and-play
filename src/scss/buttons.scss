@@ -1,0 +1,65 @@
+.btn.btn-primary {
+  background-color: #005B96;
+  border-color: #005B96;
+  color: #fff;
+}
+.btn.btn-primary:hover {
+  background-color: silver;
+  border-color: silver;
+}
+.btn.btn-info {
+  background-color: #518394;
+  border-color: #518394;
+}
+.btn.btn-info:hover {
+  background-color: silver;
+  border-color: silver;
+}
+.btn.btn-warning {
+  background-color: #518394;
+  border-color: #518394;
+}
+.btn.btn-warning:hover,
+.btn.btn-warning:active,
+.btn.btn-warning:active {
+  background-color: silver;
+  border-color: silver;
+}
+.btn.btn-danger {
+  background-color: #26657a;
+  border-color: #26657a;
+}
+.btn.btn-danger:hover {
+  background-color: silver;
+  border-color: silver;
+}
+.btn.btn-success:hover,
+.btn.btn-success:active,
+.btn.btn-success:focus  {
+  color: #ffffff !important;
+  background-color: silver !important;
+  border-color: silver !important;
+}
+
+// .btn-success {
+//   &:hover,
+//   &:focus,
+//   &.focus {
+//     color: #fff;
+//     background-color: silver;
+//   }
+//
+//   &:active,
+//   &.active,
+//   &.disabled,
+//   &:disabled {
+//     color: #fff;
+//     background-color: silver;
+//
+//     &:focus,
+//     &.focus {
+//       color: #fff;
+//       background-color: silver;
+//     }
+//   }
+// }
