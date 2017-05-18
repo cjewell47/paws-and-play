@@ -8,16 +8,17 @@
 
         <div class="col-md-6">
 
-          <div class="contactOwnerButton">
-            <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
-          </div>
-
           <div class="dogShowInfo">
+
             <h2 class="showName">{{ vm.dog.name }}</h2>
             <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
             <p class="showSize"><strong>Size:</strong> {{ vm.dog.size }}</p>
             <p class="showOwner"><strong>Owner:</strong> {{ vm.dog.owner.username }}</p>
               <p class="showLocation"><strong>Location:</strong> {{ vm.dog.owner.location }}</p>
+              <div class="contactOwnerButton">
+                <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
+              </div>
+
             <!-- <p>
             <ul>
             <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
@@ -39,13 +40,14 @@
 
       <div class="col-md-6">
         <div class="dogAvailability">
-          <h3>Availablity:</h3>
+          <h2>Availablity:</h2>
           <p>
             <p>Click here to see when {{ vm.dog.name }} is available for walks: </p>
             <ul>
               <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
             </ul></p>
             <button type="button" class="showOwner btn btn-primary" ng-click="vm.walkOpenModal()">Request Dates</button>
+
             <!-- <div class="availabilityBlock">
               <p>Weekdays daytime</p>
               <p>Weekdays evening</p>
