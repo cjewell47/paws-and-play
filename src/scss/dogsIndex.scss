@@ -25,6 +25,7 @@
 
   &:hover {
     background-color: sliver;
+
   }
 }
 .dogHomeH2 {
@@ -40,6 +41,7 @@
   padding-left: 10px;
   padding-right: 10px;
   background-color: rgba(254, 191, 0, .5);
+
 }
 .dogHomeSize {
   max-width: 80%;
@@ -49,6 +51,11 @@
   border-radius: 15px;
   padding-bottom: 20px;
   background-color: rgba(254, 191, 0, .5);
+  &:hover{
+    -ms-transform: scale(2,3); /* IE 9 */
+      -webkit-transform: scale(2,3); /* Safari */
+      transform: scale(1.2,1.2); /* Standard syntax */
+  }
 }
 .sizeText {
   font-size: 18px;
@@ -71,7 +78,7 @@
 }
 
 //
-// .dogHomeImage:hover  {
+// dogHomeImage:hover  {
 //   opacity: 0.6;
 //
 // }
@@ -84,6 +91,13 @@
 
 .z-index {
   z-index: 99;
+  &:hover{
+
+      -ms-transform: scale(2,3); /* IE 9 */
+        -webkit-transform: scale(2,3); /* Safari */
+        transform: scale(1.1,1.1); /* Standard syntax */
+
+  }
 }
 // .imageBox:hover .imageBox {
 //   opacity: 0.3;
@@ -103,5 +117,6 @@
   text-align:center;
   border-radius: 15px;
   font-size: 18px;
+
 
 }

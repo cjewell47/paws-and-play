@@ -6,6 +6,12 @@
 .btn.btn-primary:hover {
   background-color: silver;
   border-color: silver;
+
+  -ms-transform: scale(2,3); /* IE 9 */
+  -webkit-transform: scale(2,3); /* Safari */
+  transform: scale(1.1,1.1); /* Standard syntax */
+
+
 }
 .btn.btn-info {
   background-color: #518394;
@@ -14,6 +20,9 @@
 .btn.btn-info:hover {
   background-color: silver;
   border-color: silver;
+  -ms-transform: scale(2,3); /* IE 9 */
+  -webkit-transform: scale(2,3); /* Safari */
+  transform: scale(1.1,1.1); /* Standard syntax */
 }
 .btn.btn-warning {
   background-color: #518394;
@@ -24,6 +33,9 @@
 .btn.btn-warning:active {
   background-color: silver;
   border-color: silver;
+  -ms-transform: scale(2,3); /* IE 9 */
+  -webkit-transform: scale(2,3); /* Safari */
+  transform: scale(1.1,1.1); /* Standard syntax */
 }
 .btn.btn-danger {
   background-color: #26657a;
@@ -32,6 +44,9 @@
 .btn.btn-danger:hover {
   background-color: silver;
   border-color: silver;
+  -ms-transform: scale(2,3); /* IE 9 */
+  -webkit-transform: scale(2,3); /* Safari */
+  transform: scale(1.1,1.1); /* Standard syntax */
 }
 .btn.btn-success:hover,
 .btn.btn-success:active,
@@ -39,6 +54,9 @@
   color: #ffffff !important;
   background-color: silver !important;
   border-color: silver !important;
+  -ms-transform: scale(2,3); /* IE 9 */
+  -webkit-transform: scale(2,3); /* Safari */
+  transform: scale(1.1,1.1); /* Standard syntax */
 }
 
 // .btn-success {
