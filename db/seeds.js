@@ -197,6 +197,13 @@ User
           image: 'http://cdn1-www.dogtime.com/assets/uploads/gallery/siberian-husky-dog-breed-pictures/siberian-husky-dog-breed-pictures-1.jpg',
           description: 'Very friendly with children',
           size: 'medium'
+        }, {
+          owner: users[2]._id,
+          name: 'Harry',
+          breed: 'labrador',
+          image: 'http://cdn1-www.dogtime.com/assets/uploads/gallery/labrador-retriever-dog-breed-pictures/labrador-retriever-dog-pictures-1.jpg',
+          description: 'This dog is very loyal, and enjoys cheese',
+          size: 'medium'
         }
       ])
       .then(dogs => {

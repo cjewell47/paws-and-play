@@ -40,6 +40,7 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
     .catch(err => {
       console.log(err);
     });
+    location.reload(true);
   }
 
   vm.userOpenModal = userOpenModal;
