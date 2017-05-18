@@ -1,9 +1,8 @@
-<div class="container">
-  <div class="userEditPage">
+<div class="container userEditPage">
     <h1> Update your profile</h1>
       <form name="vm.editUserForm" ng-submit="vm.update()" method="put" novalidate>
         <div class="form-group">
-        <label for="name">Name</label><br>
+        <label for="name">Username</label><br>
           <input class="form-control" type="text" name="username" ng-model="vm.user.username" placeholder="{{vm.username}}" required>
         </div>
 
@@ -12,7 +11,21 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Image</label><br>
+          <label for="location">Location</label><br>
+          <input class="form-control" type="text" name="location" ng-model="vm.user.location" placeholder="eg: W4 2W4.." required>
+        </div>
+
+        <div class="ng-message-error" ng-messages="vm.editUserForm.location.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.location.$touched)">
+          <p ng-message="required">A location is required!</p>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label><br>
+          <input class="form-control" type="text" name="mobile" ng-model="vm.user.mobile" placeholder="mobile.." required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="image">Image</label><br>
           <input class="form-control" type="text" name="image" ng-model="vm.user.image" placeholder="Image" required>
         </div>
 
@@ -22,7 +35,7 @@
 
         <div class="form-group">
           <label for="name">Email</label><br>
-          <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="Email" required>
+          <input class="form-control" type="email" name="email" ng-model="vm.user.email" placeholder="eg: walk@mydog.com.." required>
         </div>
 
         <div class="ng-message-error" ng-messages="vm.editUserForm.email.$error" ng-show="(vm.editUserForm.$submitted || vm.editUserForm.email.$touched)">
@@ -34,5 +47,4 @@
         <input class="btn btn-primary" type="submit" value="Update" />
 
       </form>
-  </div>
 </div>

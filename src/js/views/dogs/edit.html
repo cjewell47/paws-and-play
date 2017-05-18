@@ -51,9 +51,12 @@
       <div class="dogEditButtons">
         <button type="button" name="back" class="btn btn-info backButton" ui-sref="usersShow({ id: main.user._id})">Back</button>
         <input type="submit" class="btn btn-warning saveButton" value="Save">
+        <button type="button" class="btn btn-danger deleteButton" ng-click="vm.dogOpenModal()">Delete</button>
       </div>
+
+
       </form>
 
-      <button type="button" class="btn btn-danger deleteButton" ng-click="vm.dogOpenModal()">Delete</button>
+      <!-- <button type="button" class="btn btn-danger deleteButton" ng-click="vm.dogOpenModal()">Delete</button> -->
     </div>
   </div>

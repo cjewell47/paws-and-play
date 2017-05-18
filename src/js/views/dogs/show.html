@@ -6,43 +6,54 @@
           <img ng-src="{{ vm.dog.image }}">
         </div>
 
-        <div class="dogShowButton">
-          <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
-        </div>
-
         <div class="col-md-6">
+
+          <div class="contactOwnerButton">
+            <button type="button" name="back" class="btn btn-info" ui-sref="#">Contact the owner</button>
+          </div>
+
           <div class="dogShowInfo">
             <h2 class="showName">{{ vm.dog.name }}</h2>
             <p class="showBreed"><strong>Breed:</strong> {{ vm.dog.breed }}</p>
             <p class="showSize"><strong>Size:</strong> {{ vm.dog.size }}</p>
             <p class="showOwner"><strong>Owner:</strong> {{ vm.dog.owner.username }}</p>
-            <p>Available dates: <ul>
-              <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
-            </ul></p>
-            <p class="showLocation"><strong>Location:</strong></p>
-            <button class="showOwner" ng-click="vm.walkOpenModal()">Available Dates</button>
+              <p class="showLocation"><strong>Location:</strong> {{ vm.dog.owner.location }}</p>
+            <!-- <p>
+            <ul>
+            <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
+          </ul></p>
+          <button class="showOwner btn-primary" ng-click="vm.walkOpenModal()">Available Dates</button> -->
 
-            <!-- <h4 class="media-heading"><strong>Owner:</strong> {{vm.dog.owner.username }}</h4> -->
-          </div>
+          <!-- <h4 class="media-heading"><strong>Owner:</strong> {{vm.dog.owner.username }}</h4> -->
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="dogShowDesc">
-            <h3>About {{ vm.dog.name }}:</h3>
-            <p>Puppy kitty ipsum dolor sit good dog . Food nap toy tabby bird food catch dog house commands cat bird food purr water lol catz. Feathers harness warm scratcher walk paws warm lazy dog foot gimme five fur speak bark walk catch barky litter box heel treats. Toy maine coon cat shake grooming roll over carrier fleas foot pet right paw feathers meow slobber tongue speak. Canary toys foot window cockatiel park nap.</p>
-            <p>{{ vm.dog.description }}</p>
-          </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="dogShowDesc">
+          <h3>About {{ vm.dog.name }}:</h3>
+          <p>Puppy kitty ipsum dolor sit good dog . Food nap toy tabby bird food catch dog house commands cat bird food purr water lol catz. Feathers harness warm scratcher walk paws warm lazy dog foot gimme five fur speak bark walk catch barky litter box heel treats. Toy maine coon cat shake grooming roll over carrier fleas foot pet right paw feathers meow slobber tongue speak. Canary toys foot window cockatiel park nap.</p>
+          <p>{{ vm.dog.description }}</p>
         </div>
-        <div class="col-md-6">
-          <div class="dogAvailability">
-            <h3>Available:</h3>
-            <p>Weekdays daytime</p>
-            <p>Weekdays evening</p>
-            <p>Weekends</p>
-            <p>Holidays</p>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dogAvailability">
+          <h3>Availablity:</h3>
+          <p>
+            <p>Click here to see when {{ vm.dog.name }} is available for walks: </p>
+            <ul>
+              <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
+            </ul></p>
+            <button type="button" class="showOwner btn btn-primary" ng-click="vm.walkOpenModal()">Request Dates</button>
+            <!-- <div class="availabilityBlock">
+              <p>Weekdays daytime</p>
+              <p>Weekdays evening</p>
+              <p>Weekends</p>
+              <p>Holidays</p>
+            </div> -->
           </div>
-          <div class="dogShowButton">
+          <div class="showBackButton">
             <button type="button" name="back" class="btn btn-info" ui-sref="dogsIndex">Return to Dog Index</button>
           </div>
         </div>
