@@ -121,7 +121,7 @@ footer {
   border: none;
 
   :hover {
-    color: #777;
+    color: #FEBF00;
   }
 
   a {
@@ -153,15 +153,12 @@ footer {
       margin-right: 13px;
       filter: invert(100%);
 
+      :hover {
+        box-shadow: 25px 25px 10px 1px rgba(254,191,0,1);
+      }
+
   }
 }
-
-// .container {
-//   // border: 1px dotted silver;
-//   // background-color: rgba(210, 210, 210, .5);
-//   background-color: rgba(168, 193, 201, .4);
-//   margin-top: 25px;
-// }
 
 .btn-primary {
   background-color: #005B96;
@@ -188,10 +185,21 @@ footer {
   background-color: silver;
   border-color: silver;
 }
+
+.navhover {
+
+  &:hover {
+    background-color: silver;
+  }
+}
+.none{
+    text-decoration: none !important;
+}
 .btn-info {
   background-color: #518394;
   border-color: #518394;
 }
+
 .btn-info:hover {
   background-color: silver;
   border-color: silver;
