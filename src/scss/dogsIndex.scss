@@ -26,18 +26,28 @@
   margin-left: 20px;
 }
 .dogHomeBreed {
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   text-align: center;
+  border: 2px solid silver;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .dogHomeSize {
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   text-align: center;
+  border: 2px solid silver;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .sizeText {
   font-size: 18px;
-  padding-left: 25px;
+  // padding-left: 25px;
 }
 .listBlock {
   border-top: 2px solid silver;

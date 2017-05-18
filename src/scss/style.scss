@@ -11,6 +11,7 @@
 @import "userShow";
 @import "userEdit";
 @import "newWalk";
+@import "buttons";
 
 html {
   height: 100%
@@ -160,6 +161,7 @@ footer {
   }
 }
 
+
 .btn-primary {
   background-color: #005B96;
   border-color: #005B96;
@@ -198,6 +200,7 @@ footer {
 .none{
     text-decoration: none !important;
 }
+
 .btn-info {
   background-color: #518394;
   border-color: #518394;

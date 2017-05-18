@@ -6,16 +6,33 @@
   margin-left: 40px;
 }
 .dogShowInfo {
-  text-align: left;
+  // text-align: left;
+  border: 1px solid silver;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 .dogShowDesc {
   text-align: left;
   font-size: 16px;
   margin-top: 20px;
   margin-left: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid silver;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .dogAvailability {
   text-align: left;
+  border: 1px solid silver;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 103px;
 }
 .showBack {
   float:  right;
@@ -28,7 +45,7 @@
 .showBackButton {
   text-align: right;
   margin-right: 40px;
-  margin-top: 60px;
+  margin-top: 10px;
 
 }
 .availabilityBlock {
