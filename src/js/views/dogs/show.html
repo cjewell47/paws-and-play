@@ -19,7 +19,7 @@
             <p>Available dates: <ul>
               <li ng-repeat="walk in vm.dog.walks">{{  walk.date | date : format : mediumDate }}</li>
             </ul></p>
-            <p class="showLocation"><strong>Location:</strong></p>
+            <p class="showLocation"><strong>Location:</strong> {{ vm.dog.owner.location }}</p>
             <button class="showOwner" ng-click="vm.walkOpenModal()">Available Dates</button>
 
             <!-- <h4 class="media-heading"><strong>Owner:</strong> {{vm.dog.owner.username }}</h4> -->
