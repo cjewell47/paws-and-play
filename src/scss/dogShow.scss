@@ -1,6 +1,6 @@
 .dogShowMain img {
   height: 350px;
-  width: 350px;
+  width: 512px;
   border-radius: 15px;
   border: 2px solid silver;
   margin-left: 40px;
@@ -13,6 +13,8 @@
   margin-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
+  height: 350px;
+  top : -11px;
 
 }
 .dogShowDesc {
@@ -39,8 +41,8 @@
     float:  right;
   }
   .contactOwnerButton {
-    text-align: right;
-    margin-right: 40px;
+    text-align: left;
+    top: 62px;
 
   }
   .showBackButton {
