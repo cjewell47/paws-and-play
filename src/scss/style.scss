@@ -14,6 +14,12 @@ html {
   height: 100%
 }
 
+a {
+  &:hover {
+    color: silver;
+  }
+}
+
 body {
   // background-color: rgba(206, 231, 241, 1);
   // background-image: url("/images/back.png");
@@ -95,8 +101,9 @@ h4{
     border-radius: 5px;
     text-decoration: none !important;
   }
-  a:hover {
-    color: rgba(255, 0, 0, 1);
+
+  &:hover {
+    color: silver;
   }
 }
 
@@ -154,11 +161,28 @@ footer {
 //   margin-top: 25px;
 // }
 
-
+.btn-primary {
+  background-color: #005B96;
+  border-color: #005B96;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: silver;
+  border-color: silver;
+}
 .btn-warning {
   background-color: #518394;
+  border-color: #518394;
 }
-
+.btn-warning:hover {
+  background-color: silver;
+  border-color: silver;
+}
 .btn-danger {
   background-color: #26657a;
+  border-color: #26657a;
+}
+.btn-danger:hover {
+  background-color: silver;
+  border-color: silver;
 }

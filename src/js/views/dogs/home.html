@@ -1,17 +1,31 @@
 <div class="container">
-  <h2>Dogs near you</h2>
   <div class="dogList">
-    <div class="row">
-      <h3>Dog Breed</h3>
-      <input type="search" class="search" ng-model="vm.q" placeholder="Search by Breed...">
-      <h3>Dog Size</h3>
-      <label for="">Small</label>
-      <input name="size" type="checkbox" ng-model="vm.small" value="small">
-      <label for="">Medium</label>
-      <input name="size" type="checkbox" ng-model="vm.medium" value="medium">
-      <label for="">Large</label>
-      <input name="size" type="checkbox" ng-model="vm.large" value="large">
 
+    <div class="row">
+      <h2 class="dogHomeH2">Filter your search</h2>
+      <div class="col-md-6">
+        <div class="dogHomeBreed">
+          <h3>Breed</h3>
+          <input type="search" class="form-control search" ng-model="vm.q" placeholder="Search by Breed...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="dogHomeSize">
+            <h3>Size</h3>
+            <label class="sizeText" for="">Small</label>
+            <input name="size" type="checkbox" ng-model="vm.small" value="small">
+            <label class="sizeText" for="">Medium</label>
+            <input name="size" type="checkbox" ng-model="vm.medium" value="medium">
+            <label class="sizeText" for="">Large</label>
+            <input name="size" type="checkbox" ng-model="vm.large" value="large">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row listBlock">
+      <h2 class="dogHomeH2">Dogs near you</h2>
       <div ng-repeat="dog in vm.filtered">
         <div class="col-md-4 col-s-6 imageBox">
           <img class="dogHomeImage" ng-src="{{dog.image}}" ui-sref="dogsShow({ id: dog._id })">

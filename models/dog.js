@@ -8,25 +8,13 @@ const dogSchema = new mongoose.Schema({
   description: { type: String },
   image: { type: String, required: true },
   size: {type: String },
-  walk: {
-    available: [
-      {
-        type: Date
-      }
-    ],
-    pending: [
-      {
-        date: { type: Date },
-        walker: { type: mongoose.Schema.ObjectId, ref: 'User' }
-      }
-    ],
-    accepted: [
-      {
-        date: { type: Date },
-        walker: { type: mongoose.Schema.ObjectId, ref: 'User' }
-      }
-    ]
-  }
+  walks: [{
+    date: Date,
+    requests: [{
+      walker: { type: mongoose.Schema.ObjectId, ref: 'User' }
+    }],
+    accepted: { type: mongoose.Schema.ObjectId, ref: 'User' }
+  }]
 },{
   timestamps: true
 });
