@@ -4,18 +4,16 @@
   <form name="vm.addDogForm" ng-submit="vm.create()" novalidate>
     <div class="form-group">
       <label for="name">Name</label><br>
-      <input type="text" id="name" name="name" ng-model="vm.dog.name" class="form-control" required>
+      <input type="text" id="name" name="name" ng-model="vm.dog.name" class="form-control"  placeholder="eg: Boo.." required >
     </div>
-
     <div class="ng-message-error" ng-messages="vm.addDogForm.name.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.name.$touched)">
       <p ng-message="required">A name is required!</p>
     </div>
 
     <div class="form-group">
       <label for="breed">Breed</label><br>
-      <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" class="form-control" required>
+      <input type="text" id="breed" name="breed" ng-model="vm.dog.breed" class="form-control" placeholder="eg: jack russel.." required>
     </div>
-
     <div class="ng-message-error" ng-messages="vm.addDogForm.breed.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.breed.$touched)">
       <p ng-message="required">Breed is required!</p>
     </div>
@@ -35,7 +33,7 @@
 
     <div class="form-group">
       <label for="image">Image</label><br>
-      <input type="text" id="image" name="image" ng-model="vm.dog.image" class="form-control" required>
+      <input type="text" id="image" name="image" ng-model="vm.dog.image" class="form-control" placeholder="image URL.." required>
     </div>
 
     <div class="ng-message-error" ng-messages="vm.addDogForm.image.$error" ng-show="(vm.addDogForm.$submitted || vm.addDogForm.image.$touched)">
@@ -44,7 +42,7 @@
 
     <div class="form-group">
       <label for="description">Description</label><br>
-      <textarea type="text" id="description" name="description" ng-model="vm.dog.description" class="form-control"></textarea>
+      <textarea type="text" id="description" name="description" ng-model="vm.dog.description" class="form-control" placeholder="eg: My dog is a lovely dog.."></textarea>
     </div>
 
     <input type="submit" class="btn btn-warning loginButton" value="Add" >
