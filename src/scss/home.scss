@@ -1,3 +1,10 @@
+.longlogo {
+  width: 650px;
+  height: 210px;
+  padding-top: 100px;
+  align-items: center;
+}
+
 .dogs {
   display: inline-block;
   p {
@@ -9,24 +16,37 @@
 }
 
 .doggo {
-  background-color: rgba(254, 191, 0, .4);
+  background-color: rgba(254, 191, 0, .5);
   border-radius: 10px;
+  height: 100%;
   font-size: 14px;
+  margin-top: 35px;
+  padding-bottom: 35px;
+
+  p {
+    text-align:justify;
+  }
+
   img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
     margin: 20px;
     border-radius: 50%;
     padding-left: 0px;
     float: left;
     clear: both;
-    background-color: green;
+    background-color: teal;
   }
 }
 
-
+.person {
+  padding-top: 1px;
+  text-align: center;
+}
 .step {
-  padding-top: 45px;
+  padding-top: 35px;
+  background-color: rgba(168, 193, 201, .4);
+  margin-top: 40px;
 
   img {
     width: 100px;
