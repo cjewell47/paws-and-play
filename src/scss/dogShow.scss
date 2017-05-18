@@ -3,27 +3,35 @@
   width: 350px;
   border-radius: 15px;
   border: 2px solid silver;
+  margin-left: 40px;
 }
-
 .dogShowInfo {
   text-align: left;
 }
-
 .dogShowDesc {
   text-align: left;
   font-size: 16px;
   margin-top: 20px;
   margin-left: 40px;
 }
-
 .dogAvailability {
   text-align: left;
 }
-
 .showBack {
   float:  right;
 }
-
-.dogShowButton {
+.contactOwnerButton {
   text-align: right;
+  margin-right: 40px;
+
+}
+.showBackButton {
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 60px;
+
+}
+.availabilityBlock {
+  margin-top: 15px;
+  margin-left: 20px;
 }
