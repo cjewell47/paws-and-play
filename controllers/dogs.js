@@ -111,4 +111,5 @@ module.exports = {
   delete: deleteRoute,
   walkUpdate: walkUpdate,
   walkSelect: walkSelect
+  // walkConfirm: walkConfirm
 };

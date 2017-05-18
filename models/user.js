@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   image: { type: String },
   location: { type: String, required: true },
   mobile: {type: Number },
+  messages: [],
   passwordHash: { type: String, required: true },
   dogs: []
 });
