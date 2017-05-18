@@ -10,8 +10,11 @@ function WalkNewCtrl (Dog, $state, TokenService, $stateParams) {
 
   function walkCreate(){
     // console.log(vm.walk);
+    // vm.date = $filter('date')(vm.walk, 'MMM d, y');
+    vm.date = vm.walk.toDateString();
+    console.log('DOES THIS WORK', vm.date);
     Dog
-    .addWalk($stateParams, {date: vm.walk})
+    .addWalk($stateParams, { date: vm.date })
     .$promise
     .then(dog => {
       console.log('THIS IS DOG---', dog);

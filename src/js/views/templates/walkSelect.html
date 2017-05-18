@@ -5,7 +5,7 @@
   <div class="form-group">
     <label for="walks">Available dates</label><br>
     <select id="size"  name="walks" ng-model="vm.select">
-      <option ng-repeat="walk in vm.dog.walks">{{ walk.date | date : format : mediumDate }}
+      <option ng-repeat="walk in vm.dog.walks">{{ walk.date | date : format : "mediumDate" }}
       </option>
     </select>
     <!-- <p> {{ vm.select }}</p> -->
