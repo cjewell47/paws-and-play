@@ -8,8 +8,9 @@
       <option ng-repeat="walk in vm.dog.walks">{{ walk.date | date : format : "mediumDate" }}
       </option>
     </select>
+
     <!-- <p> {{ vm.select }}</p> -->
-    <button ng-click="vm.request()" type="submit" name="walks" value="Submit request">request this date</button>
+    <button class="btn btn-warning" ng-click="vm.request()" type="submit" name="walks" value="Submit request">request this date</button>
   </div>
 </div>
 <div class="modal-footer">

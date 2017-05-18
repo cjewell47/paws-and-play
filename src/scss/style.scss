@@ -19,12 +19,11 @@ html {
 a {
   &:hover {
     color: silver;
+    transition: .3s ease;
   }
 }
 
 body {
-  // background-color: rgba(206, 231, 241, 1);
-  // background-image: url("/images/back.png");
   font-family: 'Signika Negative', sans-serif;  position: relative;
   min-height: 100%;
   padding-bottom: 350px;
@@ -106,6 +105,7 @@ h4{
 
   &:hover {
     color: silver;
+    transition: .3s ease;
   }
 }
 
@@ -153,8 +153,9 @@ footer {
       margin-right: 13px;
       filter: invert(100%);
 
-      :hover {
-        box-shadow: 25px 25px 10px 1px rgba(254,191,0,1);
+      &:hover {
+        box-shadow: 2px 2px 4px 1px rgba(254, 191, 0, 1);
+        transition: .3s ease;
       }
 
   }
@@ -168,6 +169,7 @@ footer {
 .btn-primary:hover {
   background-color: silver;
   border-color: silver;
+  transition: .3s ease;
 }
 .btn-warning {
   background-color: #518394;
@@ -176,6 +178,7 @@ footer {
 .btn-warning:hover {
   background-color: silver;
   border-color: silver;
+  transition: .3s ease;
 }
 .btn-danger {
   background-color: #26657a;
@@ -184,11 +187,13 @@ footer {
 .btn-danger:hover {
   background-color: silver;
   border-color: silver;
+  transition: .3s ease;
 }
 
 .navhover {
 
   &:hover {
+    transition: .3s ease;
     background-color: silver;
   }
 }
@@ -198,9 +203,11 @@ footer {
 .btn-info {
   background-color: #518394;
   border-color: #518394;
+  transition: .5s ease;
 }
 
 .btn-info:hover {
   background-color: silver;
   border-color: silver;
+  transition: .5s ease;
 }
