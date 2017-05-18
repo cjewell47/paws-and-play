@@ -9,6 +9,8 @@
 @import "dogShow";
 @import "dogEdit";
 @import "userShow";
+@import "userEdit";
+@import "newWalk";
 
 html {
   height: 100%
@@ -183,6 +185,14 @@ footer {
   border-color: #26657a;
 }
 .btn-danger:hover {
+  background-color: silver;
+  border-color: silver;
+}
+.btn-info {
+  background-color: #518394;
+  border-color: #518394;
+}
+.btn-info:hover {
   background-color: silver;
   border-color: silver;
 }
