@@ -8,9 +8,9 @@ function WalkNewCtrl (Dog, $state, TokenService, $stateParams) {
   const vm = this;
   vm.create = walkCreate;
   function walkCreate(){
-    console.log(vm.walk);
+    // console.log(vm.walk);
     Dog
-    .addWalk($stateParams, vm.walk)
+    .addWalk($stateParams, {date: vm.walk})
     .$promise
     .then(dog => {
       console.log(dog);

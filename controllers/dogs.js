@@ -56,11 +56,13 @@ function deleteRoute(req, res, next) {
 }
 
 function walkUpdate(req, res) {
+  console.log('***************** WALK', req.body);
   Dog
   .findById(req.params.id)
   .exec()
   .then(dog => {
     dog.walks.push(req.body);
+    dog.save();
     console.log('DOGGGG', dog);
   });
 }
