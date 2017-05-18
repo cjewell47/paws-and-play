@@ -1,3 +1,16 @@
 .userInfoBlock {
-  background-color: rgba(168, 193, 201, .4);
+  // background-color: rgba(168, 193, 201, .4);
+  border: 1px solid silver;
+  border-radius: 15px;
+  background-color: #fff;
+  padding-left: 50px;
+  padding-bottom: 10px;
+}
+
+.userDogInfoBlock {
+  // background-color: rgba(168, 193, 201, .4);
+  border: 1px solid silver;
+  border-radius: 15px;
+  background-color: #fff;
+  margin-top: 60px;
 }
