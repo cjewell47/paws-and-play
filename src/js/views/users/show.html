@@ -34,7 +34,9 @@
               <p>Breed: {{ dog.breed }}</p>
               <p>Size: {{ dog.size }}</p>
               <p>Description: {{ dog.description }}</p>
-              <p>Availability: <span ng-repeat="walk in dog.walks">{{  walk.date }}</span></p>
+              <p>Availability: <ul>
+                <li ng-repeat="walk in dog.walks">{{  walk.date | date : format : mediumDate }}</li>
+              </ul></p>
               <div class="userUpdateButton">
                 <button type="button" name="back" class="btn btn-warning" ui-sref="dogsEdit({ id: dog._id})">Edit</button>
                 <button type="button" name="add" class="btn btn-warning" ui-sref="walksNew({ id: dog._id })">Add walk date</button>
