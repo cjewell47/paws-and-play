@@ -23,8 +23,6 @@ a {
 }
 
 body {
-  // background-color: rgba(206, 231, 241, 1);
-  // background-image: url("/images/back.png");
   font-family: 'Signika Negative', sans-serif;  position: relative;
   min-height: 100%;
   padding-bottom: 350px;
@@ -153,8 +151,8 @@ footer {
       margin-right: 13px;
       filter: invert(100%);
 
-      :hover {
-        box-shadow: 25px 25px 10px 1px rgba(254,191,0,1);
+      &:hover {
+        box-shadow: 2px 2px 4px 1px rgba(254, 191, 0, 1);
       }
 
   }
