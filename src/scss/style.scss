@@ -26,7 +26,7 @@ a {
 body {
   font-family: 'Signika Negative', sans-serif;  position: relative;
   min-height: 100%;
-  padding-bottom: 350px;
+  padding-bottom: 195px;
 }
 
 .background {
@@ -101,11 +101,11 @@ h4{
     font-size: 25px;
     border-radius: 5px;
     text-decoration: none !important;
-  }
 
-  &:hover {
-    color: silver;
-    transition: .3s ease;
+    &:hover {
+      transition: .3s ease;
+      color: silver;
+    }
   }
 }
 
@@ -148,16 +148,15 @@ footer {
     flex-direction: row;
     justify-content: center;
   img {
-      width: 27px;
-      height: 27px;
-      margin-right: 13px;
-      filter: invert(100%);
+    width: 27px;
+    height: 27px;
+    margin-right: 13px;
+    filter: invert(100%);
 
-      &:hover {
-        box-shadow: 2px 2px 4px 1px rgba(254, 191, 0, 1);
-        transition: .3s ease;
-      }
-
+    &:hover {
+      box-shadow: 2px 2px 4px 1px rgba(254, 191, 0, 1);
+      transition: .3s ease;
+    }
   }
 }
 
@@ -191,7 +190,6 @@ footer {
 }
 
 .navhover {
-
   &:hover {
     transition: .3s ease;
     background-color: silver;
@@ -210,4 +208,8 @@ footer {
   background-color: silver;
   border-color: silver;
   transition: .5s ease;
+}
+textarea{
+   resize:vertical;
+   max-height: 200px;
 }
