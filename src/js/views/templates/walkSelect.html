@@ -5,7 +5,7 @@
   <div class="form-group">
     <label for="walks">Available dates</label><br>
     <ul id="size"  name="walks">
-      <li ng-click="setActive(date)" ng-repeat="walk in vm.dog.walks">{{ walk.date }}
+      <li ng-click="setActive(date)" ng-repeat="walk in vm.dog.walks">{{ walk.date | date : format : mediumDate }}
       </li>
     </ul>
     <button type="submit" name="walks" value="Submit request">request this date</button>
