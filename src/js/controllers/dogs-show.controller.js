@@ -16,6 +16,7 @@ function DogShowCtrl (Dog, $stateParams, $state, $uibModal) {
 
   function walkOpenModal() {
     $uibModal.open({
+      url: `/dogs/:id/walks/select`,
       templateUrl: 'js/views/templates/walkSelect.html',
       controller: 'WalkSelectCtrl as vm',
       resolve: {

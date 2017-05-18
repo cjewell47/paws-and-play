@@ -2,10 +2,11 @@ angular
   .module('DogApp')
   .controller('WalkSelectCtrl', WalkSelectCtrl);
 
-WalkSelectCtrl.$inject = ['dog', '$uibModalInstance'];
-function WalkSelectCtrl(dog, $uibModalInstance) {
+WalkSelectCtrl.$inject = ['dog', '$uibModalInstance', 'Dog', '$stateParams', 'CurrentUserService'];
+function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserService) {
   const vm = this;
   vm.dog = dog;
+  vm.user = CurrentUserService.currentUser;
 
   function closeModal() {
     $uibModalInstance.close();
@@ -13,15 +14,21 @@ function WalkSelectCtrl(dog, $uibModalInstance) {
 
   vm.close = closeModal;
 
-  function walkSelect() {
+  function walkRequest() {
+    console.log('user--------', vm.user._id);
+    console.log('walk-------', vm.select);
     Dog
-      .update();
+    .selectWalk($stateParams, vm.select, vm.user._id)
+    .$promise
+    .then(dog => {
+      console.log('I HAVE MADE A WALK REQUEST', dog);
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
-  function setActive(date) {
-    vm.date = date;
-  }
 
-  vm.select = walkSelect;
+  vm.request = walkRequest;
 
 }

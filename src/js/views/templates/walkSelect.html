@@ -4,11 +4,12 @@
 <div class="modal-body">
   <div class="form-group">
     <label for="walks">Available dates</label><br>
-    <select id="size"  name="walks">
-      <option ng-repeat="walk in vm.dog.walks" value="walk">{{ walk.date | date : format : mediumDate }}
+    <select id="size"  name="walks" ng-model="vm.select">
+      <option ng-repeat="walk in vm.dog.walks">{{ walk.date | date : format : mediumDate }}
       </option>
     </select>
-    <button ng-click="walkRequest()" type="submit" name="walks" value="Submit request">request this date</button>
+    <!-- <p> {{ vm.select }}</p> -->
+    <button ng-click="vm.request()" type="submit" name="walks" value="Submit request">request this date</button>
   </div>
 </div>
 <div class="modal-footer">

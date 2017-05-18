@@ -2,9 +2,9 @@ angular
 .module('DogApp')
 .controller('WalkNewCtrl', WalkNewCtrl);
 
-WalkNewCtrl.$inject = ['Dog', '$state','TokenService', '$stateParams', '$location'];
+WalkNewCtrl.$inject = ['Dog', '$state','TokenService', '$stateParams'];
 
-function WalkNewCtrl (Dog, $state, TokenService, $stateParams, $location) {
+function WalkNewCtrl (Dog, $state, TokenService, $stateParams) {
   const vm = this;
   vm.create = walkCreate;
 

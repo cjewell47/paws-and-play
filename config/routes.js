@@ -4,7 +4,7 @@ const router   = express.Router();
 const authentications = require('../controllers/authentications');
 const users           = require('../controllers/users');
 const dogs            = require('../controllers/dogs');
-const walks            = require('../controllers/walks');
+const walks           = require('../controllers/walks');
 
 
 router.route('/register')
@@ -28,6 +28,8 @@ router.route('/dogs/:id')
 .delete(dogs.delete);
 router.route('/dogs/:id/walks')
 .put(dogs.walkUpdate);
+router.route('/dogs/:id/walks/select')
+.put(dogs.walkSelect);
 
 
 router.route('/walks')

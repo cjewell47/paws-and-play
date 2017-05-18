@@ -73,10 +73,6 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controllerAs: 'vm'
   })
 
-
-
-
-
   ;
 
   $urlRouterProvider.otherwise('/');
