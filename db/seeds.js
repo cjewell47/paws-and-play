@@ -63,11 +63,11 @@ User
           description: 'This dog is really cool.',
           size: 'medium',
           walk: [{
-            date: '2017-07-11',
+            date: '2017-05-02T23:00:00.000Z',
             requests: [],
             accepted: {}
           }, {
-            date: '2017-06-01',
+            date: '2017-09-01T23:00:00.000Z',
             requests: [],
             accepted: {}
           }]
@@ -80,11 +80,11 @@ User
           description: 'This dog is an absolute bastard.',
           size: 'small',
           walk: [{
-            date: '2017-05-28',
+            date: '2017-07-11T23:00:00.000Z',
             requests: [],
             accepted: {}
           }, {
-            date: '2017-05-29',
+            date: '2017-08-02T23:00:00.000Z',
             requests: [],
             accepted: {}
           }]
@@ -96,11 +96,11 @@ User
           description: 'This dog looks weird.',
           size: 'small',
           walk: [{
-            date: '2017-07-07',
+            date: '2018-06-17T23:00:00.000Z',
             requests: [],
             accepted: {}
           }, {
-            date: '2017-07-08',
+            date: '2017-05-02T23:00:00.000Z',
             requests: [],
             accepted: {}
           }]

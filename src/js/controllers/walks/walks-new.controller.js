@@ -14,6 +14,7 @@ function WalkNewCtrl (Dog, $state, TokenService, $stateParams) {
     .$promise
     .then(dog => {
       console.log(dog);
+      $state.go('usersShow',{ id: TokenService.decodeToken().id });
     })
     .catch(err => {
       console.log(err);

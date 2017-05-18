@@ -4,7 +4,7 @@
 <div class="modal-body">
   <div class="form-group">
     <label for="walks">Available dates</label><br>
-    <ul id="size"  name="walks" ng-model="vm.dog.walks.date">
+    <ul id="size"  name="walks">
       <li ng-click="setActive(date)" ng-repeat="walk in vm.dog.walks">{{ walk.date }}
       </li>
     </ul>
