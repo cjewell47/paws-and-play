@@ -7,6 +7,7 @@ WalkNewCtrl.$inject = ['Dog', '$state','TokenService', '$stateParams', '$locatio
 function WalkNewCtrl (Dog, $state, TokenService, $stateParams, $location) {
   const vm = this;
   vm.create = walkCreate;
+
   function walkCreate(){
     // console.log(vm.walk);
     Dog
@@ -16,7 +17,7 @@ function WalkNewCtrl (Dog, $state, TokenService, $stateParams, $location) {
       console.log('THIS IS DOG---', dog);
       // $state.go('usersShow',{ id: TokenService.decodeToken().id });
       // $location.path(`/users/${dog.owner}`);
-      // $state.go('usersShow', { id: dog.owner });
+      $state.go('usersShow', { id: dog.owner });
     })
     .catch(err => {
       console.log(err);
