@@ -2,8 +2,8 @@ angular
   .module('DogApp')
   .controller('WalkSelectCtrl', WalkSelectCtrl);
 
-WalkSelectCtrl.$inject = ['dog', '$uibModalInstance', 'Dog', '$stateParams', 'CurrentUserService'];
-function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserService) {
+WalkSelectCtrl.$inject = ['dog', '$uibModalInstance', 'Dog', '$stateParams', 'CurrentUserService', '$state'];
+function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserService, $state) {
   const vm = this;
   vm.dog = dog;
   vm.user = CurrentUserService.currentUser;
@@ -22,6 +22,8 @@ function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserSe
     .$promise
     .then(dog => {
       console.log('I HAVE MADE A WALK REQUEST', dog);
+      // $state.go('dogsShow', { id: dog._id });
+      vm.close();
     })
     .catch(err => {
       console.log(err);

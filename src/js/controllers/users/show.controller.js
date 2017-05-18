@@ -2,13 +2,12 @@ angular
 .module('DogApp')
 .controller('UsersShowCtrl', UsersShowCtrl);
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$uibModal'];
+UsersShowCtrl.$inject = ['User', '$stateParams', '$uibModal', 'Dog'];
 
-function UsersShowCtrl (User, $stateParams, $uibModal) {
+function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
   const vm = this;
 
   vm.user = User.get({ id: $stateParams.id });
-  vm.dogs  = vm.user.dogs;
 
   function userOpenModal() {
     $uibModal.open({
@@ -22,8 +21,12 @@ function UsersShowCtrl (User, $stateParams, $uibModal) {
     });
   }
 
-  
+  function confirmWalk(dog, request) {
+    vm.dog = dog;
+    vm.request = request;
+    console.log('DogsDogsDogs', vm.dog, vm.request);
+  }
 
   vm.userOpenModal = userOpenModal;
-
+  vm.confirmWalk = confirmWalk;
 }
