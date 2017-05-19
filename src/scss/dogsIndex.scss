@@ -8,6 +8,7 @@
   opacity: 1;
   transition: .5s ease;
   backface-visibility: hidden;
+   box-shadow: 2px 2px 5px #888888;
 }
 .listBlock{
   background: rgba(135, 203, 109, .8);
@@ -22,6 +23,7 @@
   margin: auto;
   background-color: #518394;
   border: 1px solid #518394;
+  box-shadow: 2px 2px 5px #888888;
 
   &:hover {
     background-color: sliver;
@@ -51,11 +53,7 @@
   border-radius: 15px;
   padding-bottom: 20px;
   background-color: rgba(254, 191, 0, .5);
-  &:hover{
-    -ms-transform: scale(2,3); /* IE 9 */
-      -webkit-transform: scale(2,3); /* Safari */
-      transform: scale(1.2,1.2); /* Standard syntax */
-  }
+
 }
 .sizeText {
   font-size: 18px;
@@ -91,13 +89,7 @@
 
 .z-index {
   z-index: 99;
-  &:hover{
 
-      -ms-transform: scale(2,3); /* IE 9 */
-        -webkit-transform: scale(2,3); /* Safari */
-        transform: scale(1.1,1.1); /* Standard syntax */
-
-  }
 }
 // .imageBox:hover .imageBox {
 //   opacity: 0.3;
