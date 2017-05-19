@@ -13,6 +13,7 @@
             <p>Mobile:{{ vm.user.mobile }} </p>
             <p>Postcode:{{ vm.user.location }} </p>
             <p>Upcoming walks: <ul>
+              <p>{{ vm.user.messages }}</p>
               <li ng-repeat="message in vm.user.messages">
                 {{ message }}
               </li>

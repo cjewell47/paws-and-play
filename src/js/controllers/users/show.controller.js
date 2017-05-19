@@ -27,15 +27,16 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
       walker: request,
       walk: walk
     };
-    console.log(dog);
-    console.log(request);
+    console.log('dog', dog);
+    console.log('walker', request);
     console.log('walk*****', walk);
+    console.log('info object:', info);
     User
     .confirm($stateParams, info)
 
     .$promise
     .then(dog => {
-      console.log('DogDogDog', dog);
+      console.log('This is a user', dog);
     })
     .catch(err => {
       console.log(err);
