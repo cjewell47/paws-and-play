@@ -15,7 +15,6 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
       .get({ id: $stateParams.id })
       .$promise
       .then(user => {
-        console.log('user:', user);
         vm.user = user;
       })
       .catch(err => {
@@ -41,9 +40,6 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
       request: request,
       walk: walk
     };
-    // console.log('dog', dog);
-    // console.log('walker', request);
-    // console.log('walk*****', walk);
     console.log('info object:', info);
 
     User
@@ -57,7 +53,7 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
       console.log(err);
     });
 
-    // location.reload(true);
+    location.reload(true);
   }
 
   vm.userOpenModal = userOpenModal;
