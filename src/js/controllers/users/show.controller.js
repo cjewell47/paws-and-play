@@ -7,7 +7,21 @@ UsersShowCtrl.$inject = ['User', '$stateParams', '$uibModal', 'Dog'];
 function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
   const vm = this;
 
-  vm.user = User.get({ id: $stateParams.id });
+  // vm.user = User.get({ id: $stateParams.id });
+  getUserDetails();
+
+  function getUserDetails() {
+    User
+      .get({ id: $stateParams.id })
+      .$promise
+      .then(user => {
+        console.log('user:', user);
+        vm.user = user;
+      })
+      .catch(err => {
+        console.log('Error in getUserDetails:', err);
+      });
+  }
 
   function userOpenModal() {
     $uibModal.open({
@@ -24,13 +38,14 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
   function confirmWalk(dog, request, walk) {
     var info = {
       dog: dog,
-      walker: request,
+      request: request,
       walk: walk
     };
-    console.log('dog', dog);
-    console.log('walker', request);
-    console.log('walk*****', walk);
+    // console.log('dog', dog);
+    // console.log('walker', request);
+    // console.log('walk*****', walk);
     console.log('info object:', info);
+
     User
     .confirm($stateParams, info)
 
@@ -41,7 +56,8 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
     .catch(err => {
       console.log(err);
     });
-    location.reload(true);
+
+    // location.reload(true);
   }
 
   vm.userOpenModal = userOpenModal;

@@ -61,13 +61,14 @@ function usersDelete(req, res) {
 }
 
 function walkConfirm(req, res, next) {
-  // console.log(req.body);
-  console.log(req.body);
+  // console.log('req.body.request in walkConfirm:', req.body.request);
   User
-  .findById(req.body.walker)
+  .findById(req.body.request.walker._id)
   .exec()
   .then(user => {
     user.messages.push('You got a walk m8!');
+    console.log('user.messages:', user.messages);
+    user.save();
   })
   .catch(next);
 
@@ -80,10 +81,10 @@ function walkConfirm(req, res, next) {
       const date2 = new Date(req.body.walk.date);
       if (date1.toString() === date2.toString()) {
         dog.walks.splice(i, 1);
-        console.log('got here!!!!!!!');
+        console.log('Inside walkConfirm Dog.findById if statement');
       }
     }
-    return dog.save();
+    dog.save();
   });
 
 }
