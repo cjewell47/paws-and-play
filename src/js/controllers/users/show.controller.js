@@ -7,20 +7,7 @@ UsersShowCtrl.$inject = ['User', '$stateParams', '$uibModal', 'Dog'];
 function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
   const vm = this;
 
-  // vm.user = User.get({ id: $stateParams.id });
-  getUserDetails();
-
-  function getUserDetails() {
-    User
-      .get({ id: $stateParams.id })
-      .$promise
-      .then(user => {
-        vm.user = user;
-      })
-      .catch(err => {
-        console.log('Error in getUserDetails:', err);
-      });
-  }
+  vm.user = User.get({ id: $stateParams.id });
 
   function userOpenModal() {
     $uibModal.open({

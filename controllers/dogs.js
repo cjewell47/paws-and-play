@@ -87,7 +87,6 @@ function walkSelect(req, res, next) {
   })
   .then((dog) => {
     console.log('-------dog', dog);
-    console.log('dog.walks[0].requests:', dog.walks[0].requests);
     return res.status(201).json(dog);
   })
   .catch(next);

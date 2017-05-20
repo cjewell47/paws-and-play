@@ -12,7 +12,6 @@ function DogShowCtrl (Dog, $stateParams, $state, $uibModal) {
   .$promise
   .then(data => {
     vm.dog = data;
-    console.log(vm.dog.walks);
   });
 
   function walkOpenModal() {
