@@ -12,8 +12,7 @@ function LoginCtrl(User, CurrentUserService, $state) {
     User
       .login(vm.user)
       .$promise
-      .then(data => {
-        console.log(data);
+      .then(() => {
         CurrentUserService.getUser();
         $state.go('dogsIndex');
       })

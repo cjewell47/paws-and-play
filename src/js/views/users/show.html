@@ -83,9 +83,15 @@
               </div>
               <p>{{ dog.name }}'s Requests</p>
               <ul>
-                <li ng-repeat="walk in dog.walks">{{ walk.date | date : format : mediumDate }}<br><ul>
-                  <li ng-repeat="request in walk.requests"><button class="btn btn-warning" ng-click="vm.confirmWalk(dog, request, walk)">Confirm {{ request.walker.username }}</button></li>
-                </ul></li>
+                <li ng-repeat="walk in dog.walks">{{ walk.date | date : format : mediumDate }}<br>
+                  <ul>
+                    <li ng-repeat="request in walk.requests">
+                      <button class="btn btn-warning" ng-click="vm.confirmWalk(dog, request, walk)">
+                        Confirm {{ request.walker.username }}
+                      </button>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </ul>
           </div>
