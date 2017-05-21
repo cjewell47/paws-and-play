@@ -73,9 +73,9 @@ function walkConfirm(req, res, next) {
 
   Promise.all([walker, dog])
   .then(values => {
-    const walker = values[0];
-    const dog = values[1];
-    const requestDate = new Date(req.body.walk.date);
+    const walker         = values[0];
+    const dog           = values[1];
+    const requestDate   = new Date(req.body.walk.date);
     const indexToRemove = dog.walks.findIndex(walk => {
       return walk.date.getDate() === requestDate.getDate();
     });
