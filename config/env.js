@@ -2,7 +2,7 @@ module.exports = {
   env: process.env.NODE_ENV,
   db: {
     production: process.env.MONGODB_URI,
-    development: `mongodb://localhost/app-development`,
+    development: `mongodb://localhost/app-${this.env}`,
     test: `mongodb://localhost/app-${this.env}`
   },
   port: process.env.PORT || 4000,

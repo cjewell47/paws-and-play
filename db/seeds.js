@@ -2,7 +2,7 @@ const env        = require('../config/env');
 const mongoose   = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-mongoose.connect(env.db[process.env.NODE_ENV]||env.db.development);
+mongoose.connect(env.db[process.env.NODE_ENV]);
 
 const User = require('../models/user');
 const Dog  = require('../models/dog');
