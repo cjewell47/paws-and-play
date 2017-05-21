@@ -14,7 +14,7 @@
             <p>Postcode:{{ vm.user.location }} </p>
             <p>Upcoming walks: <ul>
               <p>{{ vm.user.messages }}</p>
-              <li ng-repeat="message in vm.user.messages">
+              <li ng-repeat="message in vm.user.messages track by $index">
                 {{ message }}
               </li>
             </ul></p>
