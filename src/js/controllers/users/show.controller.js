@@ -27,10 +27,6 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
       request: request,
       walk: walk
     };
-    console.log('dog', dog);
-    console.log('request', request);
-    console.log('walk', walk);
-    console.log('info object:', info);
 
     User
     .confirm($stateParams, info)
