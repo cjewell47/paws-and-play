@@ -61,29 +61,30 @@ function usersDelete(req, res) {
 }
 
 function walkConfirm(req, res, next) {
-  // console.log(req.body);
-  console.log(req.body);
-  User
-  .findById(req.body.walker)
-  .exec()
-  .then(user => {
-    user.messages.push('You got a walk m8!');
+
+  const walker = User
+  .findById(req.body.request.walker._id)
+  .exec();
+
+  const dog = Dog
+  .findById(req.body.dog._id)
+  .populate('owner')
+  .exec();
+
+  Promise.all([walker, dog])
+  .then(values => {
+    const walker = values[0];
+    const dog = values[1];
+    const requestDate = new Date(req.body.walk.date);
+    const indexToRemove = dog.walks.findIndex(walk => {
+      return walk.date.getDate() === requestDate.getDate();
+    });
+
+    walker.messages.push(`You'll be walking ${dog.owner.username}'s dog, ${dog.name}, on ${requestDate.toDateString()}.`);
+    walker.save();
+
+    dog.walks.splice(indexToRemove, 1);
+    dog.save();
   })
   .catch(next);
-
-  Dog
-  .findById(req.body.dog)
-  .exec()
-  .then(dog => {
-    for (let i = 0; i < dog.walks.length; i++) {
-      const date1 = new Date(dog.walks[i].date);
-      const date2 = new Date(req.body.walk.date);
-      if (date1.toString() === date2.toString()) {
-        dog.walks.splice(i, 1);
-        console.log('got here!!!!!!!');
-      }
-    }
-    return dog.save();
-  });
-
 }

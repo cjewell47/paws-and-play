@@ -24,13 +24,11 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
   function confirmWalk(dog, request, walk) {
     var info = {
       dog: dog,
-      walker: request,
+      request: request,
       walk: walk
     };
-    console.log('dog', dog);
-    console.log('walker', request);
-    console.log('walk*****', walk);
     console.log('info object:', info);
+
     User
     .confirm($stateParams, info)
 
@@ -41,6 +39,7 @@ function UsersShowCtrl (User, $stateParams, $uibModal, Dog) {
     .catch(err => {
       console.log(err);
     });
+
     location.reload(true);
   }
 
