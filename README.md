@@ -120,4 +120,45 @@ Part of the process of building the API included building and running tests, so 
 
 However, all of this was done at an early stage. And later in the project we were required to change some aspects of our API, and due to time constraints some of the tests were not rewritten to adapt to the changes in our API. Regardless of this, the tests that were written were quite comprehensive in testing our initial API.
 
+### Front end functionality
+
+#### Dog Index
+
+On the index page where all of the dogs were displayed. We decided to build a filter function where the dogs could be searched by size of breed. There were icons to select the big, medium or small dogs, and you could type in a breed in the search bar. It was also important when building this that all of the dgs were displaying until any of the filter options became active by clicking on them. This all happened in the Dogs index controller.
+
+```
+DogIndexCtrl.$inject = ['Dog', 'filterFilter', '$scope'];
+function DogIndexCtrl (Dog, filterFilter, $scope) {
+  const vm      = this;
+
+  Dog
+    .query()
+    .$promise
+    .then(dogs => {
+      vm.dogs = dogs;
+      filterDogs();
+    });
+
+  function filterDogs() {
+    const params = { breed: vm.q };
+    if (vm.small) params.size  = 'small';
+    if (vm.medium) params.size = 'medium';
+    if (vm.large) params.size  = 'large';
+
+    vm.filtered = filterFilter(vm.dogs, params);
+  }
+
+  $scope.$watchGroup([
+    () => vm.small,
+    () => vm.medium,
+    () => vm.large,
+    () => vm.q
+  ], filterDogs);
+
+  vm.filterDogs = filterDogs;
+}
+```
+
+## Further Development
+
 
