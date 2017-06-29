@@ -15,14 +15,10 @@ function WalkSelectCtrl(dog, $uibModalInstance, Dog, $stateParams, CurrentUserSe
   vm.close = closeModal;
 
   function walkRequest() {
-    console.log('user--------', vm.user._id);
-    console.log('walk-------', vm.select);
     Dog
     .selectWalk($stateParams, { date: vm.select })
     .$promise
     .then(dog => {
-      console.log('I HAVE MADE A WALK REQUEST', dog);
-      // $state.go('dogsShow', { id: dog._id });
       vm.close();
     })
     .catch(err => {

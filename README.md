@@ -122,7 +122,7 @@ However, all of this was done at an early stage. And later in the project we wer
 
 ### Front end functionality
 
-#### Dog Index
+#### Dog Index page
 
 On the index page where all of the dogs were displayed. We decided to build a filter function where the dogs could be searched by size of breed. There were icons to select the big, medium or small dogs, and you could type in a breed in the search bar. It was also important when building this that all of the dgs were displaying until any of the filter options became active by clicking on them. This all happened in the Dogs index controller.
 
@@ -159,6 +159,48 @@ function DogIndexCtrl (Dog, filterFilter, $scope) {
 }
 ```
 
+#### Walk selection page
+
+I also built the modal for selecting the desired walk date that is opened on the Dog's show page. We decided having this as a pop-up modal would make for a better user experience. Within the controller for this page is the function:
+
+```
+function walkRequest() {
+    Dog
+    .selectWalk($stateParams, { date: vm.select })
+    .$promise
+    .then(dog => {
+      vm.close();
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  
+```
+  
+  Where 'selectWalk' is a custom action in the Dog factory:
+  
+```
+  Dog.$inject = ['API', '$resource'];
+function Dog(API, $resource) {
+  return $resource(`${API}/dogs/:id`,
+    { id: '@_id' },
+    {
+      'update': { method: 'PUT' },
+      'addWalk': { method: 'PUT', url: `${API}/dogs/:id/walks`},
+      'selectWalk': { method: 'PUT', url: `${API}/dogs/:id/walks/select`}
+    }
+  );
+}
+```
+We found that due to the way our front-end was structured with most actions related to the Walk happening on the Dog and User show pages that we needed to create a number of custom actions in the Dog and User factories.
+
 ## Further Development
+
+In the future I would like to return to this project and make some additions. I would to add a location property to the dogs, where users could search and filter dog's by location. I could also incorporate the Google Maps API where the locations of the Dog's would display on a map.
+
+I would also like to retroactively rewrite some of the tests that became redundant when we made some changes to our API late in the project.
+
+
 
 
