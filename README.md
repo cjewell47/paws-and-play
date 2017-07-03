@@ -25,6 +25,49 @@ We were required to:
 * Layout and style your front-end with **clean & well-formatted CSS**
 * **Deploy your application online** so it's publically accessible
 
+## Built with
+
+This app was built using the following languages, frameworks and dependencies:
+
+* JavaScript
+* jQuery
+* HTML
+* CSS, SCSS & Bootstrap
+* AngularJS
+* Express.js
+* Node.js
+* MongoDB
+
+Server-side dependencies
+
+* babel
+* bcrypt
+* bluebird
+* body-parser
+* chai
+* cors
+* express-jwt
+* forever
+* gulp
+* istanbul
+* jsonwebtoken
+* mongoose
+* morgan
+* mocha
+* supertest
+* validator
+
+Client-side dependencies
+
+* angular-jwt
+* angular-ui-router
+* angular-resource
+* angular-animate
+* angular-messages
+* bootstrap-css-only
+* satellizer
+
+
 ## Planning
 
 Once the idea was finalised, we began to explore what the user experience of the app would be. We discussed the features that would be included both within the MVP and on top of the MVP. Part of this process included drawing up some wireframes.
