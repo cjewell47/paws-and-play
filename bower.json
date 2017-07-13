@@ -19,6 +19,7 @@
     "angular-ui-router": "^0.4.2",
     "angular-resource": "^1.6.3",
     "satellizer": "latest",
+    /* "^0.15.5" */
     "angular-jwt": "^0.1.8",
     "bootstrap-css-only": "^3.3.7",
     "angular-bootstrap": "^2.5.0",
@@ -27,6 +28,7 @@
     "angularjs-slider": "^6.1.2"
   },
   "resolutions": {
-    "angular": "^1.3.0"
+    "angular": "1.6.4"
+    /* "1.6.4"*/
   }
 }
