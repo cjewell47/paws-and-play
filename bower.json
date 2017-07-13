@@ -27,6 +27,7 @@
     "angularjs-slider": "^6.1.2"
   },
   "resolutions": {
-    "angular": "1.6.4"
+    "angular": "1.5.x",
+
   }
 }
